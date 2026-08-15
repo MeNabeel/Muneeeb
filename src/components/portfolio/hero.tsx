@@ -41,18 +41,18 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden film-grain">
-      {/* Editorial Background Watermark */}
+      {/* Subtle Background Watermark (Positioned & Opacity Adjusted to prevent collision with Profile Card) */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[16vw] font-black tracking-widest text-[#8FD3C7]/[0.02] uppercase whitespace-nowrap z-0"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[11vw] font-black tracking-widest text-[#8FD3C7]/[0.015] uppercase whitespace-nowrap z-0"
         aria-hidden="true"
       >
-        CREATE
+        CREATE CONTENT
       </div>
 
       {/* Studio Lighting Beam & Camera Lens SVG Accents */}
       <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#1F7A70]/10 rounded-full blur-[140px] pointer-events-none animate-studio-pulse" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#8FD3C7]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-20 right-1/3 pointer-events-none hidden lg:block animate-lens-slow">
+      <div className="absolute top-20 right-1/3 pointer-events-none hidden lg:block animate-lens-slow z-0">
         <CameraLensSvg className="w-48 h-48 opacity-15" />
       </div>
 
@@ -160,7 +160,7 @@ export function Hero() {
             onKeyDown={handleKeyDown}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="perspective-1000 w-full max-w-md aspect-[4/5] relative cursor-pointer group focus:outline-none focus:ring-1 focus:ring-[#8FD3C7]"
+            className="perspective-1000 w-full max-w-md aspect-[4/5] relative cursor-pointer group focus:outline-none focus:ring-1 focus:ring-[#8FD3C7] z-10"
           >
             <div
               className={`w-full h-full relative transition-transform duration-700 transform-style-3d ${
@@ -209,7 +209,7 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* BACK OF PROFILE CARD (NO BUTTONS AS REQUESTED) */}
+              {/* BACK OF PROFILE CARD */}
               <div className="absolute inset-0 w-full h-full bg-[#111917] p-8 flex flex-col justify-between text-left rotate-y-180 backface-hidden teal-glow shadow-2xl border-t-2 border-[#8FD3C7]">
                 <div className="space-y-6">
                   {/* Top Header */}
