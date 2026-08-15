@@ -41,9 +41,9 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden film-grain">
-      {/* Background Editorial Watermark — Strictly position on left side behind headline so it NEVER extends behind profile card */}
+      {/* Background Editorial Watermark */}
       <div
-        className="absolute top-1/3 left-6 sm:left-12 select-none pointer-events-none text-[12vw] font-black tracking-widest text-[#8FD3C7]/[0.015] uppercase whitespace-nowrap z-0 hidden lg:block max-w-[45vw] overflow-hidden"
+        className="absolute top-1/3 left-6 sm:left-12 select-none pointer-events-none text-[10vw] font-black tracking-widest text-[#8FD3C7]/[0.015] uppercase whitespace-nowrap z-0 hidden lg:block max-w-[45vw] overflow-hidden"
         aria-hidden="true"
       >
         CREATE
@@ -77,21 +77,21 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Headline */}
+          {/* Headline - Scaled size to fit single line without breaking word */}
           <div className="space-y-1">
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none uppercase text-[#F7F4ED]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#F7F4ED] whitespace-nowrap">
               {personalDetails.heroHeadline.line1}
             </h1>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none uppercase text-[#8FD3C7] drop-shadow-[0_0_25px_rgba(143,211,199,0.25)]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#8FD3C7] drop-shadow-[0_0_25px_rgba(143,211,199,0.25)] whitespace-nowrap">
               {personalDetails.heroHeadline.accent}
             </h1>
-            <h1 className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-black tracking-tight leading-none uppercase text-[#F7F4ED]">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#F7F4ED] whitespace-nowrap">
               {personalDetails.heroHeadline.line2}
             </h1>
           </div>
 
           {/* Role Subtitle */}
-          <p className="text-sm sm:text-lg md:text-xl font-bold uppercase tracking-widest text-[#E9DDC8]">
+          <p className="text-xs sm:text-base md:text-lg font-bold uppercase tracking-widest text-[#E9DDC8]">
             {personalDetails.subTitle}
           </p>
 
