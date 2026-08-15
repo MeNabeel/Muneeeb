@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Briefcase, Building2, Calendar, ChevronRight } from "lucide-react";
+import { Building2, Calendar, ChevronRight } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { experienceTimeline } from "@/data/portfolio";
@@ -12,7 +12,7 @@ export function Experience() {
     <section id="experience" className="py-24 bg-[#0B0F0E] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="mb-16 border-b border-[rgba(143,211,199,0.15)] pb-8">
+        <div className="mb-16 border-b border-[rgba(143,211,199,0.1)] pb-8">
           <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold mb-2 block">
             Career Journey
           </span>
@@ -27,7 +27,7 @@ export function Experience() {
         {/* Timeline Layout */}
         <div className="relative">
           {/* Vertical Timeline Guide Line */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 w-[1px] bg-[rgba(143,211,199,0.2)] -translate-x-1/2 hidden md:block" />
+          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 w-[1px] bg-[rgba(143,211,199,0.15)] -translate-x-1/2 hidden md:block" />
 
           <div className="space-y-12">
             {experienceTimeline.map((item, idx) => {
@@ -45,14 +45,14 @@ export function Experience() {
                 >
                   {/* Timeline Point Dot */}
                   <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 z-10 hidden md:flex items-center justify-center">
-                    <div className="w-8 h-8 rounded-full bg-[#111917] border-2 border-[#8FD3C7] flex items-center justify-center shadow-[0_0_15px_rgba(143,211,199,0.4)]">
-                      <div className="w-2.5 h-2.5 bg-[#8FD3C7] rounded-full" />
+                    <div className="w-7 h-7 rounded-full bg-[#111917] border-2 border-[#8FD3C7] flex items-center justify-center shadow-[0_0_15px_rgba(143,211,199,0.4)]">
+                      <div className="w-2 h-2 bg-[#8FD3C7] rounded-full" />
                     </div>
                   </div>
 
-                  {/* Card Content Container */}
+                  {/* Card Content Container (Borderless) */}
                   <div className="w-full md:w-[calc(50%-3rem)]">
-                    <Card className="p-6 md:p-8 bg-[#111917] border border-[rgba(143,211,199,0.18)] hover:border-[#8FD3C7] transition-all duration-300 group hover:shadow-[0_0_30px_rgba(143,211,199,0.1)]">
+                    <Card className="p-6 md:p-8 bg-[#111917] border-none shadow-xl hover:shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-300 group">
                       {/* Top Header */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
                         <div className="flex items-center space-x-2 text-xs font-bold text-[#8FD3C7] uppercase tracking-wider">
@@ -60,7 +60,7 @@ export function Experience() {
                           <span>{item.period}</span>
                         </div>
                         {item.isCurrent && (
-                          <Badge variant="mint" className="text-[10px]">
+                          <Badge variant="mint" className="text-[10px] border-none">
                             Present Role
                           </Badge>
                         )}
@@ -77,7 +77,7 @@ export function Experience() {
                       </div>
 
                       {/* Responsibilities List */}
-                      <div className="space-y-2.5 pt-4 border-t border-[rgba(143,211,199,0.1)]">
+                      <div className="space-y-2.5 pt-4 border-t border-[rgba(143,211,199,0.08)]">
                         {item.responsibilities.map((resp, i) => (
                           <div
                             key={i}

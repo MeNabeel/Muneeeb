@@ -16,7 +16,7 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#111917] relative border-y border-[rgba(143,211,199,0.15)]">
+    <section id="about" className="py-24 bg-[#111917] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Heading & Editorial Copy */}
@@ -41,7 +41,7 @@ export function About() {
               ))}
             </div>
 
-            <div className="pt-4 border-t border-[rgba(143,211,199,0.15)] grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="pt-6 border-t border-[rgba(143,211,199,0.1)] grid grid-cols-1 sm:grid-cols-2 gap-3">
               {personalDetails.expertiseAreas.map((area) => (
                 <div key={area} className="flex items-center space-x-3 text-xs sm:text-sm text-[#E9DDC8] uppercase tracking-wider">
                   <CheckCircle2 className="h-4 w-4 text-[#8FD3C7] shrink-0" />
@@ -51,7 +51,7 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Right Column: Strategic Pillars Matrix */}
+          {/* Right Column: Strategic Pillars Matrix (Borderless cards) */}
           <motion.div
             className="lg:col-span-5 grid grid-cols-2 gap-4"
             initial={{ opacity: 0, x: 20 }}
@@ -59,10 +59,10 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            {pillarIcons.map((pillar, idx) => (
+            {pillarIcons.map((pillar) => (
               <div
                 key={pillar.name}
-                className="p-6 bg-[#0B0F0E] border border-[rgba(143,211,199,0.18)] hover:border-[#8FD3C7] transition-all group hover:shadow-[0_0_25px_rgba(143,211,199,0.12)] flex flex-col justify-between h-36"
+                className="p-6 bg-[#0B0F0E] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex flex-col justify-between h-36 border-none"
               >
                 <div className="p-2.5 bg-[#1F7A70]/20 text-[#8FD3C7] w-fit group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors">
                   {pillar.icon}

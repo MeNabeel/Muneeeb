@@ -6,7 +6,7 @@ import { trustOrganizations } from "@/data/portfolio";
 
 export function TrustStrip() {
   return (
-    <section className="py-12 bg-[#0B0F0E] border-b border-[rgba(143,211,199,0.12)]">
+    <section className="py-12 bg-[#0B0F0E]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="md:w-1/3">
@@ -22,7 +22,7 @@ export function TrustStrip() {
             {trustOrganizations.map((org, index) => (
               <motion.div
                 key={org.name}
-                className="p-4 bg-[#111917] border border-[rgba(143,211,199,0.15)] hover:border-[#8FD3C7] transition-all group"
+                className="p-5 bg-[#111917] shadow-lg hover:shadow-2xl border-none transition-all group"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

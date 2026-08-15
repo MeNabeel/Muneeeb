@@ -37,21 +37,28 @@ export interface SkillCategory {
 export interface SocialLink {
   name: string;
   url: string;
-  iconName: "Play" | "Camera" | "Globe" | "Video" | "Share2";
+  iconName: "Play" | "Camera" | "Globe" | "Video" | "Share2" | "MessageCircle" | "Mail";
+  ariaLabel: string;
 }
 
 export const personalDetails = {
   name: "MUNEEB.",
   fullTitle: "Social & Digital Media Expert",
-  subTitle: "Video Editor · Content Strategist · Social Media Manager",
+  subTitle: "Social & Digital Media Expert · Video Editor · Content Strategist · Social Media Manager",
   heroHeadline: {
     line1: "I CREATE",
     accent: "CONTENT",
     line2: "THAT MOVES.",
   },
   heroDescription:
-    "I create and manage digital content across platforms, combining video, design, social strategy and audience-focused storytelling.",
+    "I create and manage digital content across platforms, combining video, design, social strategy, and audience-focused storytelling.",
   portraitImage: "/images/muneeb-portrait.jpg",
+  email: "mrmuneebbutt69@gmail.com",
+  phone: "03234554941",
+  phoneTel: "+923234554941",
+  whatsappNumber: "+923234554941",
+  whatsappUrl: "https://wa.me/923234554941",
+  yearsExperience: "8+ YEARS",
   aboutHeading: "MORE THAN JUST EDITING.",
   aboutParagraphs: [
     "I operate at the intersection of video production, platform algorithm optimization, and brand storytelling. As a digital media strategist with extensive broadcast experience, I bridge the gap between creative execution and audience growth.",
@@ -79,26 +86,43 @@ export const socialLinks: SocialLink[] = [
     name: "YouTube",
     url: "https://www.youtube.com",
     iconName: "Play",
+    ariaLabel: "Visit Muneeb's YouTube Channel",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com",
     iconName: "Camera",
+    ariaLabel: "Follow Muneeb on Instagram",
   },
   {
     name: "Facebook",
     url: "https://www.facebook.com",
     iconName: "Globe",
+    ariaLabel: "Connect with Muneeb on Facebook",
   },
   {
     name: "TikTok",
     url: "https://www.tiktok.com",
     iconName: "Video",
+    ariaLabel: "Watch Muneeb on TikTok",
   },
   {
     name: "X (Twitter)",
     url: "https://twitter.com",
     iconName: "Share2",
+    ariaLabel: "Follow Muneeb on X",
+  },
+  {
+    name: "WhatsApp",
+    url: personalDetails.whatsappUrl,
+    iconName: "MessageCircle",
+    ariaLabel: "Contact Muneeb on WhatsApp",
+  },
+  {
+    name: "Email",
+    url: `mailto:${personalDetails.email}`,
+    iconName: "Mail",
+    ariaLabel: "Email Muneeb",
   },
 ];
 
@@ -224,7 +248,7 @@ export const experienceTimeline: ExperienceItem[] = [
     role: "Assistant Content Manager",
     isCurrent: true,
     responsibilities: [
-      "Managing YouTube, Facebook, Instagram and TikTok content strategy",
+      "Managing YouTube, Facebook, Instagram, and TikTok content strategy",
       "Daily content publishing and broadcast asset workflow coordination",
       "Improving organic reach, audience retention, and performance metrics",
       "Supporting digital revenue generation, monetization, and rights management",

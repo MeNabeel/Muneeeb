@@ -9,10 +9,10 @@ import { skillsData } from "@/data/portfolio";
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-[#111917] relative border-t border-[rgba(143,211,199,0.15)]">
+    <section id="skills" className="py-24 bg-[#111917] relative">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         {/* Section Header */}
-        <div className="mb-16 border-b border-[rgba(143,211,199,0.15)] pb-8">
+        <div className="mb-16 border-b border-[rgba(143,211,199,0.1)] pb-8">
           <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold mb-2 block">
             Technical Stack & Ecosystems
           </span>
@@ -48,8 +48,8 @@ export function Skills() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: skillIdx * 0.05 }}
                   >
-                    <Card className="p-6 bg-[#0B0F0E] border border-[rgba(143,211,199,0.18)] hover:border-[#8FD3C7] transition-all duration-300 group hover:shadow-[0_0_25px_rgba(143,211,199,0.12)] relative overflow-hidden flex flex-col justify-between h-full">
-                      {/* Top Accent Indicator */}
+                    <Card className="p-6 bg-[#0B0F0E] border-none shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 group relative overflow-hidden flex flex-col justify-between h-full rounded-none">
+                      {/* Top Accent Line Reveal on Hover */}
                       <div className="w-0 group-hover:w-full h-[2px] bg-[#8FD3C7] transition-all duration-500 absolute top-0 left-0" />
 
                       <div className="space-y-3">
@@ -57,7 +57,7 @@ export function Skills() {
                           <h4 className="text-lg font-bold uppercase tracking-tight text-[#F7F4ED] group-hover:text-[#8FD3C7] group-hover:scale-[1.02] transition-transform duration-300 origin-left">
                             {skill.name}
                           </h4>
-                          <Badge variant="outline" className="text-[9px]">
+                          <Badge variant="outline" className="text-[9px] border-none bg-[#1F7A70]/20 text-[#8FD3C7]">
                             {skill.category}
                           </Badge>
                         </div>

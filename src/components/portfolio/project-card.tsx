@@ -6,6 +6,7 @@ import { Play, ArrowUpRight } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Project } from "@/data/portfolio";
+import { getYouTubeThumbnailUrl } from "@/lib/youtube";
 
 interface ProjectCardProps {
   project: Project;
@@ -14,16 +15,19 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
   const hasVideo = Boolean(project.youtubeUrl);
+  // Auto-generate YouTube thumbnail if available, otherwise use custom thumbnail
+  const autoThumbnail = getYouTubeThumbnailUrl(project.youtubeUrl);
+  const displayThumbnail = autoThumbnail || project.thumbnail;
 
   return (
     <Card
       onClick={() => onSelect(project)}
-      className="group relative cursor-pointer overflow-hidden bg-[#111917] border border-[rgba(143,211,199,0.18)] hover:border-[#8FD3C7] transition-all duration-500 hover:shadow-[0_0_35px_rgba(143,211,199,0.15)] flex flex-col h-full"
+      className="group relative cursor-pointer overflow-hidden bg-[#111917] border-none hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] transition-all duration-500 flex flex-col h-full rounded-none"
     >
       {/* Thumbnail Aspect Frame */}
       <div className="relative w-full aspect-video overflow-hidden bg-[#0B0F0E]">
         <Image
-          src={project.thumbnail}
+          src={displayThumbnail}
           alt={project.title}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -49,7 +53,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
 
         {/* Floating Category Badge */}
         <div className="absolute top-3 left-3 z-10">
-          <Badge variant="mint" className="text-[10px] tracking-widest shadow-md">
+          <Badge variant="mint" className="text-[10px] tracking-widest shadow-md border-none">
             {project.category}
           </Badge>
         </div>
@@ -74,7 +78,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
 
         {/* Tags Footer */}
         {project.tags && project.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5 pt-2 border-t border-[rgba(143,211,199,0.1)]">
+          <div className="flex flex-wrap gap-1.5 pt-3 border-t border-[rgba(143,211,199,0.08)]">
             {project.tags.slice(0, 3).map((tag) => (
               <span
                 key={tag}
