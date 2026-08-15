@@ -1,15 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { featuredWork, Project } from "@/data/portfolio";
 import { ProjectCard } from "./project-card";
 import { ProjectDialog } from "./project-dialog";
+import { useAppDispatch, useAppSelector } from "@/store";
+import { setActiveCategory, openProjectDialog } from "@/store/portfolioSlice";
 
 export function FeaturedWork() {
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [activeProject, setActiveProject] = useState<Project | null>(null);
+  const dispatch = useAppDispatch();
+  const selectedCategory = useAppSelector((state) => state.portfolio.activeCategory);
 
   const categories = [
     "All",
@@ -24,6 +26,10 @@ export function FeaturedWork() {
     selectedCategory === "All"
       ? featuredWork
       : featuredWork.filter((p) => p.category === selectedCategory);
+
+  const handleSelectProject = (project: Project) => {
+    dispatch(openProjectDialog(project));
+  };
 
   return (
     <section id="work" className="py-24 bg-[#0B0F0E] relative">
@@ -46,7 +52,7 @@ export function FeaturedWork() {
           <Tabs
             defaultValue="All"
             value={selectedCategory}
-            onValueChange={setSelectedCategory}
+            onValueChange={(val) => dispatch(setActiveCategory(val))}
             className="w-full md:w-auto"
           >
             <TabsList className="flex-wrap h-auto bg-[#111917] p-1 border-none shadow-md">
@@ -73,7 +79,7 @@ export function FeaturedWork() {
               transition={{ duration: 0.5, delay: idx * 0.08 }}
               layout
             >
-              <ProjectCard project={project} onSelect={setActiveProject} />
+              <ProjectCard project={project} onSelect={handleSelectProject} />
             </motion.div>
           ))}
         </motion.div>
@@ -89,11 +95,7 @@ export function FeaturedWork() {
       </div>
 
       {/* Modal Dialog */}
-      <ProjectDialog
-        project={activeProject}
-        isOpen={Boolean(activeProject)}
-        onClose={() => setActiveProject(null)}
-      />
+      <ProjectDialog />
     </section>
   );
 }

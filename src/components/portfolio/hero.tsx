@@ -3,7 +3,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, MessageCircle, Video, Share2, Lightbulb, RefreshCw, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Video, Share2, Lightbulb, RefreshCw, Mail } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { personalDetails } from "@/data/portfolio";
@@ -46,7 +47,7 @@ export function Hero() {
         >
           {/* Label Badge */}
           <div>
-            <Badge variant="default" className="px-3 py-1 text-[11px] tracking-widest">
+            <Badge variant="default" className="px-3 py-1 text-[11px] tracking-widest border-none">
               {personalDetails.fullTitle}
             </Badge>
           </div>
@@ -111,7 +112,7 @@ export function Hero() {
                 rel="noopener noreferrer"
                 aria-label="Contact Muneeb on WhatsApp"
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
+                <FaWhatsapp className="mr-2 h-4 w-4 text-base" />
                 WhatsApp Muneeb
               </a>
             </Button>
@@ -148,7 +149,7 @@ export function Hero() {
                     fill
                     priority
                     sizes="(max-width: 768px) 100vw, 40vw"
-                    className="object-cover object-top grayscale-[15%] contrast-110 group-hover:scale-105 transition-all duration-700"
+                    className="object-cover object-top grayscale-[10%] contrast-105 group-hover:scale-105 transition-all duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E] via-transparent to-transparent opacity-75" />
 
@@ -184,7 +185,7 @@ export function Hero() {
                     <span className="text-xs font-black uppercase tracking-widest text-[#8FD3C7]">
                       Professional Profile
                     </span>
-                    <Badge variant="mint" className="text-[10px]">
+                    <Badge variant="mint" className="text-[10px] border-none">
                       {personalDetails.yearsExperience} Experience
                     </Badge>
                   </div>
@@ -223,7 +224,7 @@ export function Hero() {
                     onClick={(e) => e.stopPropagation()}
                     className="w-full bg-[#1F7A70] hover:bg-[#289689] text-[#F7F4ED] text-xs font-bold uppercase tracking-wider py-2.5 px-4 flex items-center justify-center transition-colors"
                   >
-                    <MessageCircle className="mr-2 h-4 w-4" />
+                    <FaWhatsapp className="mr-2 h-4 w-4 text-base" />
                     Chat on WhatsApp
                   </a>
 

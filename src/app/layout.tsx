@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Syne } from "next/font/google";
 import "./globals.css";
+import { ReduxProvider } from "@/store/provider";
 
 const sansFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -67,7 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`dark scroll-smooth ${sansFont.variable} ${displayFont.variable}`}>
       <body className="bg-[#0B0F0E] text-[#F7F4ED] font-sans antialiased selection:bg-[#1F7A70] selection:text-[#F7F4ED]">
-        {children}
+        <ReduxProvider>{children}</ReduxProvider>
       </body>
     </html>
   );

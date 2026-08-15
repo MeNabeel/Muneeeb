@@ -12,10 +12,13 @@ import {
 } from "@/components/ui/sheet";
 import { SocialIcons } from "./social-icons";
 import { personalDetails } from "@/data/portfolio";
+import { useAppDispatch, useAppSelector } from "@/store";
+import { setMobileMenuOpen } from "@/store/portfolioSlice";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const mobileMenuOpen = useAppSelector((state) => state.portfolio.mobileMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,10 +76,8 @@ export function Navbar() {
           ))}
         </nav>
 
-        {/* Desktop Right CTA & Borderless Social Icons */}
-        <div className="hidden lg:flex items-center space-x-6">
-          <SocialIcons iconSize="h-4 w-4" />
-
+        {/* Desktop Right CTA (No social icons in header) */}
+        <div className="hidden lg:flex items-center">
           <Button
             asChild
             variant="mint"
@@ -92,7 +93,10 @@ export function Navbar() {
 
         {/* Mobile Navigation Sheet */}
         <div className="lg:hidden flex items-center">
-          <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+          <Sheet
+            open={mobileMenuOpen}
+            onOpenChange={(open) => dispatch(setMobileMenuOpen(open))}
+          >
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" aria-label="Open Navigation Menu">
                 <Menu className="h-6 w-6 text-[#F7F4ED]" />
@@ -114,7 +118,7 @@ export function Navbar() {
                     <a
                       key={link.name}
                       href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => dispatch(setMobileMenuOpen(false))}
                       className="text-base font-bold uppercase tracking-widest text-[#A9B2AE] hover:text-[#8FD3C7] transition-colors border-b border-[rgba(143,211,199,0.08)] pb-2.5"
                     >
                       {link.name}
@@ -125,14 +129,14 @@ export function Navbar() {
 
               <div className="space-y-6 pt-6 border-t border-[rgba(143,211,199,0.12)]">
                 <div className="flex justify-center">
-                  <SocialIcons iconSize="h-5 w-5" />
+                  <SocialIcons iconSize="text-xl" />
                 </div>
 
                 <Button
                   asChild
                   variant="mint"
                   className="w-full justify-between"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={() => dispatch(setMobileMenuOpen(false))}
                 >
                   <a href={personalDetails.whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="Contact Muneeb on WhatsApp">
                     <span>Chat on WhatsApp</span>

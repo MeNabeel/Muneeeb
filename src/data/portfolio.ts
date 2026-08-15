@@ -37,9 +37,14 @@ export interface SkillCategory {
 export interface SocialLink {
   name: string;
   url: string;
-  iconName: "Play" | "Camera" | "Globe" | "Video" | "Share2" | "MessageCircle" | "Mail";
+  platformKey: "youtube" | "instagram" | "facebook" | "tiktok" | "x" | "whatsapp";
   ariaLabel: string;
 }
+
+// Pre-filled WhatsApp message URL
+const whatsappCustomMessage = encodeURIComponent(
+  "Hi Muneeb, I saw your portfolio and would like to discuss a project with you."
+);
 
 export const personalDetails = {
   name: "MUNEEB.",
@@ -57,7 +62,7 @@ export const personalDetails = {
   phone: "03234554941",
   phoneTel: "+923234554941",
   whatsappNumber: "+923234554941",
-  whatsappUrl: "https://wa.me/923234554941",
+  whatsappUrl: `https://wa.me/923234554941?text=${whatsappCustomMessage}`,
   yearsExperience: "8+ YEARS",
   aboutHeading: "MORE THAN JUST EDITING.",
   aboutParagraphs: [
@@ -85,44 +90,38 @@ export const socialLinks: SocialLink[] = [
   {
     name: "YouTube",
     url: "https://www.youtube.com",
-    iconName: "Play",
+    platformKey: "youtube",
     ariaLabel: "Visit Muneeb's YouTube Channel",
   },
   {
     name: "Instagram",
     url: "https://www.instagram.com",
-    iconName: "Camera",
+    platformKey: "instagram",
     ariaLabel: "Follow Muneeb on Instagram",
   },
   {
     name: "Facebook",
     url: "https://www.facebook.com",
-    iconName: "Globe",
+    platformKey: "facebook",
     ariaLabel: "Connect with Muneeb on Facebook",
   },
   {
     name: "TikTok",
     url: "https://www.tiktok.com",
-    iconName: "Video",
+    platformKey: "tiktok",
     ariaLabel: "Watch Muneeb on TikTok",
   },
   {
     name: "X (Twitter)",
     url: "https://twitter.com",
-    iconName: "Share2",
+    platformKey: "x",
     ariaLabel: "Follow Muneeb on X",
   },
   {
     name: "WhatsApp",
     url: personalDetails.whatsappUrl,
-    iconName: "MessageCircle",
+    platformKey: "whatsapp",
     ariaLabel: "Contact Muneeb on WhatsApp",
-  },
-  {
-    name: "Email",
-    url: `mailto:${personalDetails.email}`,
-    iconName: "Mail",
-    ariaLabel: "Email Muneeb",
   },
 ];
 

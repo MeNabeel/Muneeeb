@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Send, CheckCircle2, MessageCircle, Mail, Phone } from "lucide-react";
+import { ArrowUpRight, Send, CheckCircle2, Mail, Phone } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import {
@@ -13,9 +14,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { personalDetails } from "@/data/portfolio";
+import { useAppDispatch, useAppSelector } from "@/store";
+import { setContactDialogOpen } from "@/store/portfolioSlice";
 
 export function Contact() {
-  const [dialogOpen, setDialogOpen] = useState(false);
+  const dispatch = useAppDispatch();
+  const dialogOpen = useAppSelector((state) => state.portfolio.contactDialogOpen);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
@@ -31,7 +35,7 @@ export function Contact() {
 
   const handleReset = () => {
     setFormSubmitted(false);
-    setDialogOpen(false);
+    dispatch(setContactDialogOpen(false));
     setFormData({ name: "", email: "", projectType: "Video Production", message: "" });
   };
 
@@ -70,15 +74,15 @@ export function Contact() {
             </p>
           </motion.div>
 
-          {/* Action Buttons */}
+          {/* Action Buttons: ONLY TWO BUTTONS (WhatsApp Muneeb & Contact Form) */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-4 pt-2"
+            className="flex flex-wrap items-center justify-center gap-5 pt-2"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            {/* WhatsApp Muneeb Button */}
+            {/* 1. WhatsApp Muneeb Button */}
             <Button
               asChild
               variant="mint"
@@ -91,34 +95,21 @@ export function Contact() {
                 rel="noopener noreferrer"
                 aria-label="Contact Muneeb on WhatsApp"
               >
-                <MessageCircle className="mr-2.5 h-5 w-5" />
+                <FaWhatsapp className="mr-2.5 h-5 w-5 text-xl" />
                 WhatsApp Muneeb
                 <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </Button>
 
-            {/* Send Email Button */}
+            {/* 2. Detailed Project Contact Form Launcher Button */}
             <Button
-              asChild
-              className="bg-[#E9DDC8] text-[#0B0F0E] font-bold tracking-wider hover:bg-[#F7F4ED] text-base px-8 py-6 rounded-none cursor-pointer"
-            >
-              <a
-                href={`mailto:${personalDetails.email}`}
-                aria-label="Email Muneeb"
-              >
-                <Mail className="mr-2.5 h-5 w-5" />
-                Send Email
-              </a>
-            </Button>
-
-            {/* Custom Form Modal Launcher */}
-            <Button
-              variant="ghost"
+              variant="outline"
               size="lg"
-              onClick={() => setDialogOpen(true)}
-              className="text-sm px-6 py-6 border-none text-[#A9B2AE] hover:text-[#8FD3C7]"
+              onClick={() => dispatch(setContactDialogOpen(true))}
+              className="text-base px-8 py-6 rounded-none cursor-pointer border-[rgba(143,211,199,0.25)] text-[#E9DDC8] hover:text-[#8FD3C7]"
             >
-              Detailed Project Form
+              Contact Form
+              <ArrowUpRight className="ml-2 h-5 w-5" />
             </Button>
           </motion.div>
         </Card>
@@ -168,7 +159,7 @@ export function Contact() {
             className="p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
           >
             <div className="p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors">
-              <MessageCircle className="h-5 w-5" />
+              <FaWhatsapp className="h-5 w-5 text-lg" />
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-[#A9B2AE]">WhatsApp Direct</p>
@@ -181,7 +172,7 @@ export function Contact() {
       </div>
 
       {/* Interactive Contact Dialog Form */}
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+      <Dialog open={dialogOpen} onOpenChange={(open) => dispatch(setContactDialogOpen(open))}>
         <DialogContent className="max-w-xl p-6 sm:p-8 bg-[#111917] border-none shadow-2xl">
           {!formSubmitted ? (
             <>
