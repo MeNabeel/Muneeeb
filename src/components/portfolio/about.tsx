@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { GraduationCap, Award, Briefcase, CheckCircle2 } from "lucide-react";
 import { personalDetails } from "@/data/portfolio";
+import { FilmStripSideBar } from "./studio-decorations";
 
 export function About() {
   const journeyTimeline = [
@@ -31,8 +32,16 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-[#111917] relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16">
+    <section id="about" className="py-24 bg-[#111917] relative film-grain overflow-hidden">
+      {/* Decorative Side Film Strips */}
+      <div className="absolute top-12 left-4 hidden lg:block">
+        <FilmStripSideBar />
+      </div>
+      <div className="absolute top-12 right-4 hidden lg:block">
+        <FilmStripSideBar />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 space-y-16 relative z-10">
         {/* Main Personal Journey Column */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Narrative Column */}
@@ -43,9 +52,10 @@ export function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold block">
-              Personal &amp; Professional Journey
-            </span>
+            <div className="flex items-center space-x-2 text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold">
+              <span className="w-2 h-2 rounded-full bg-[#8FD3C7] animate-pulse" />
+              <span>Personal &amp; Professional Journey</span>
+            </div>
 
             <h2 className="text-4xl sm:text-5xl font-black uppercase tracking-tight text-[#F7F4ED] leading-none">
               ABOUT <span className="text-[#8FD3C7]">MUNEEB.</span>
@@ -69,8 +79,11 @@ export function About() {
             {journeyTimeline.map((item) => (
               <div
                 key={item.step}
-                className="p-5 bg-[#0B0F0E] shadow-xl border-none space-y-2 group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all"
+                className="p-5 bg-[#0B0F0E] shadow-xl border-none space-y-2 group hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all relative overflow-hidden"
               >
+                {/* Accent Top Border */}
+                <div className="absolute top-0 left-0 right-0 h-[2px] bg-[#1F7A70] group-hover:bg-[#8FD3C7] transition-colors" />
+
                 <div className="flex items-center justify-between">
                   <span className="text-[10px] uppercase tracking-widest text-[#8FD3C7] font-bold">
                     {item.step}

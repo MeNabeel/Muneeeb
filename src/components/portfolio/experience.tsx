@@ -2,98 +2,88 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { Building2, Calendar, ChevronRight } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { Clock } from "lucide-react";
 import { experienceTimeline } from "@/data/portfolio";
+import { FilmReelSvg } from "./studio-decorations";
 
 export function Experience() {
   return (
-    <section id="experience" className="py-24 bg-[#0B0F0E] relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
+    <section id="experience" className="py-24 bg-[#111917] relative overflow-hidden film-grain">
+      {/* Background Film Reel Graphic */}
+      <div className="absolute top-10 right-10 pointer-events-none hidden lg:block animate-lens-slow">
+        <FilmReelSvg className="w-56 h-56 opacity-10" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-16">
         {/* Section Header */}
-        <div className="mb-16 border-b border-[rgba(143,211,199,0.1)] pb-8">
-          <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold mb-2 block">
-            Career Journey
-          </span>
-          <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#F7F4ED]">
-            PROFESSIONAL <span className="text-[#8FD3C7]">EXPERIENCE.</span>
-          </h2>
-          <p className="text-base text-[#A9B2AE] mt-2 max-w-xl">
-            Key editorial, broadcast, and social media leadership roles across tier-1 Pakistani news networks and print design studios.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-[rgba(143,211,199,0.1)] pb-8 gap-4">
+          <div>
+            <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold mb-2 block">
+              Professional Timeline
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black uppercase tracking-tight text-[#F7F4ED]">
+              CAREER <span className="text-[#8FD3C7]">EXPERIENCE.</span>
+            </h2>
+          </div>
+
+          <div className="flex items-center space-x-2 px-3 py-1 bg-[#0B0F0E] text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.15)]">
+            <Clock className="h-3 w-3" />
+            <span>SEQ_TIMELINE: 00:01:24:12</span>
+          </div>
         </div>
 
-        {/* Timeline Layout */}
-        <div className="relative">
-          {/* Vertical Timeline Guide Line */}
-          <div className="absolute top-0 bottom-0 left-4 md:left-1/2 w-[1px] bg-[rgba(143,211,199,0.15)] -translate-x-1/2 hidden md:block" />
+        {/* Timeline Items List */}
+        <div className="relative space-y-8 before:content-[''] before:absolute before:top-2 before:bottom-2 before:left-3 md:before:left-1/2 before:w-[2px] before:bg-[rgba(143,211,199,0.15)] before:-translate-x-1/2">
+          {experienceTimeline.map((item, idx) => {
+            const isEven = idx % 2 === 0;
 
-          <div className="space-y-12">
-            {experienceTimeline.map((item, idx) => {
-              const isEven = idx % 2 === 0;
-              return (
-                <motion.div
-                  key={item.id}
-                  className={`relative flex flex-col md:flex-row items-start ${
-                    isEven ? "md:flex-row-reverse" : ""
+            return (
+              <motion.div
+                key={item.id}
+                className="relative flex flex-col md:flex-row items-start md:items-center group"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+              >
+                {/* Timeline Dot Marker */}
+                <div className="absolute left-3 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-[#0B0F0E] border-2 border-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:scale-125 transition-all duration-300 z-10" />
+
+                {/* Content Box */}
+                <div
+                  className={`w-full md:w-[45%] pl-10 md:pl-0 ${
+                    isEven ? "md:mr-auto md:pr-12 md:text-right" : "md:ml-auto md:pl-12"
                   }`}
-                  initial={{ opacity: 0, y: 25 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: idx * 0.1 }}
                 >
-                  {/* Timeline Point Dot */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-6 z-10 hidden md:flex items-center justify-center">
-                    <div className="w-7 h-7 rounded-full bg-[#111917] border-2 border-[#8FD3C7] flex items-center justify-center shadow-[0_0_15px_rgba(143,211,199,0.4)]">
-                      <div className="w-2 h-2 bg-[#8FD3C7] rounded-full" />
-                    </div>
+                  <div className="p-6 bg-[#0B0F0E] shadow-xl hover:shadow-2xl border-none transition-all group-hover:bg-[#0B0F0E]/90 relative overflow-hidden">
+                    {/* Timecode Badge */}
+                    <span className="text-[10px] uppercase font-mono tracking-widest text-[#8FD3C7] bg-[#1F7A70]/20 px-2.5 py-1 inline-block mb-3">
+                      {item.period}
+                    </span>
+
+                    <h3 className="text-xl font-bold uppercase text-[#E9DDC8]">
+                      {item.role}
+                    </h3>
+                    <p className="text-sm font-semibold text-[#8FD3C7] mt-1 mb-4">
+                      {item.company}
+                    </p>
+
+                    <ul
+                      className={`space-y-2 text-xs text-[#A9B2AE] ${
+                        isEven ? "md:text-right" : "text-left"
+                      }`}
+                    >
+                      {item.responsibilities.map((resp, rIdx) => (
+                        <li key={rIdx} className="leading-relaxed">
+                          • {resp}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  {/* Card Content Container (Borderless) */}
-                  <div className="w-full md:w-[calc(50%-3rem)]">
-                    <Card className="p-6 md:p-8 bg-[#111917] border-none shadow-xl hover:shadow-[0_10px_35px_rgba(0,0,0,0.5)] transition-all duration-300 group">
-                      {/* Top Header */}
-                      <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-                        <div className="flex items-center space-x-2 text-xs font-bold text-[#8FD3C7] uppercase tracking-wider">
-                          <Calendar className="h-3.5 w-3.5" />
-                          <span>{item.period}</span>
-                        </div>
-                        {item.isCurrent && (
-                          <Badge variant="mint" className="text-[10px] border-none">
-                            Present Role
-                          </Badge>
-                        )}
-                      </div>
-
-                      {/* Company & Role */}
-                      <h3 className="text-xl md:text-2xl font-black uppercase text-[#E9DDC8] tracking-tight group-hover:text-[#8FD3C7] transition-colors mb-1">
-                        {item.role}
-                      </h3>
-
-                      <div className="flex items-center space-x-2 text-sm text-[#A9B2AE] font-semibold uppercase tracking-wider mb-6">
-                        <Building2 className="h-4 w-4 text-[#1F7A70]" />
-                        <span>{item.company}</span>
-                      </div>
-
-                      {/* Responsibilities List */}
-                      <div className="space-y-2.5 pt-4 border-t border-[rgba(143,211,199,0.08)]">
-                        {item.responsibilities.map((resp, i) => (
-                          <div
-                            key={i}
-                            className="flex items-start space-x-2.5 text-xs sm:text-sm text-[#A9B2AE] leading-relaxed"
-                          >
-                            <ChevronRight className="h-4 w-4 text-[#8FD3C7] shrink-0 mt-0.5" />
-                            <span>{resp}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </Card>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -8,6 +8,7 @@ import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { personalDetails } from "@/data/portfolio";
+import { CameraLensSvg, FocusBrackets } from "./studio-decorations";
 
 export function Hero() {
   const [isFlippedManual, setIsFlippedManual] = useState(false);
@@ -48,9 +49,12 @@ export function Hero() {
         CREATE
       </div>
 
-      {/* Subtle Background Radial Lighting Glow */}
-      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#1F7A70]/10 rounded-full blur-[140px] pointer-events-none" />
+      {/* Studio Lighting Beam & Camera Lens SVG Accents */}
+      <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-[#1F7A70]/10 rounded-full blur-[140px] pointer-events-none animate-studio-pulse" />
       <div className="absolute bottom-10 right-10 w-[400px] h-[400px] bg-[#8FD3C7]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-20 right-1/3 pointer-events-none hidden lg:block animate-lens-slow">
+        <CameraLensSvg className="w-48 h-48 opacity-15" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
         {/* Left Column: Headline, Subtitle & Warm Beige Primary CTA */}
@@ -60,11 +64,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* Label Badge */}
-          <div>
+          {/* Label Badge with Live REC Indicator */}
+          <div className="flex items-center space-x-3">
             <Badge variant="default" className="px-3 py-1 text-[11px] tracking-widest border-none">
               {personalDetails.fullTitle}
             </Badge>
+
+            {/* LIVE REC Indicator */}
+            <div className="flex items-center space-x-1.5 px-2.5 py-1 bg-[#111917] border border-[rgba(143,211,199,0.15)] text-[10px] font-mono tracking-widest text-[#8FD3C7]">
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-rec" />
+              <span className="font-bold">REC • 00:04:12:08</span>
+            </div>
           </div>
 
           {/* Headline */}
@@ -170,11 +180,8 @@ export function Hero() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E] via-transparent to-transparent opacity-80" />
 
-                  {/* Corner Accent Markers */}
-                  <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#8FD3C7]" />
-                  <div className="absolute top-2 right-2 w-2 h-2 border-t-2 border-r-2 border-[#8FD3C7]" />
-                  <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#8FD3C7]" />
-                  <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#8FD3C7]" />
+                  {/* Corner Accent Markers / Focus Brackets */}
+                  <FocusBrackets />
 
                   {/* Top Right: 5+ YEARS Experience Badge */}
                   <div className="absolute top-4 right-4 z-20 bg-[#0B0F0E]/90 backdrop-blur-md px-3 py-1.5 border border-[#8FD3C7]/40 shadow-xl flex items-center space-x-1.5">
@@ -190,7 +197,7 @@ export function Hero() {
                     <span>Auto Flip</span>
                   </div>
 
-                  {/* Front Bottom-Left Overlay Details (Name completely un-obscured) */}
+                  {/* Front Bottom-Left Overlay Details */}
                   <div className="absolute bottom-6 left-6 z-20 text-left space-y-1">
                     <p className="text-xs uppercase tracking-widest text-[#8FD3C7] font-bold">
                       {personalDetails.fullTitle}
@@ -253,7 +260,7 @@ export function Hero() {
                   </div>
                 </div>
 
-                {/* Card Back Footer (Clean text signature, no buttons) */}
+                {/* Card Back Footer */}
                 <div className="pt-4 border-t border-[rgba(143,211,199,0.12)] text-xs text-[#A9B2AE] flex items-center justify-between">
                   <span className="uppercase tracking-widest font-bold text-[#E9DDC8]">
                     MUNEEB<span className="text-[#8FD3C7]">.</span>
@@ -265,7 +272,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Label Badges (Desktop) — Positioned on Top-Left & Bottom-Right to avoid hiding name overlay! */}
+            {/* Floating Label Badges (Desktop) */}
             <div className="absolute -top-4 -left-4 sm:-left-6 z-30 pointer-events-none">
               <div className="p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-3">
                 <div className="p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">
@@ -290,7 +297,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* BOTTOM RIGHT FLOATING BADGE (Safe from bottom-left name watermark) */}
+            {/* BOTTOM RIGHT FLOATING BADGE */}
             <div className="absolute -bottom-4 right-4 sm:right-6 z-30 pointer-events-none">
               <div className="p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-3">
                 <div className="p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">

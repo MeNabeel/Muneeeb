@@ -7,6 +7,7 @@ import { featuredWork, Project } from "@/data/portfolio";
 import { ProjectCard } from "./project-card";
 import { ProjectDialog } from "./project-dialog";
 import { ChannelMarquee } from "./channel-marquee";
+import { EditorTimeline } from "./editor-timeline";
 import { useAppDispatch, useAppSelector } from "@/store";
 import { setActiveCategory, openProjectDialog } from "@/store/portfolioSlice";
 
@@ -33,7 +34,12 @@ export function FeaturedWork() {
   };
 
   return (
-    <section id="work" className="pt-24 pb-12 bg-[#0B0F0E] relative">
+    <section id="work" className="pt-24 pb-12 bg-[#0B0F0E] relative overflow-hidden">
+      {/* Decorative Editor Timeline Header Accent */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-8">
+        <EditorTimeline timecode="00:08:42:15" className="shadow-2xl" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6 border-b border-[rgba(143,211,199,0.1)] pb-8">
