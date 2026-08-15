@@ -52,7 +52,7 @@ export const personalDetails = {
   },
   heroDescription:
     "I create and manage digital content across platforms, combining video, design, social strategy, and audience-focused storytelling.",
-  portraitImage: "/images/muneeb-portrait.jpg",
+  portraitImage: "/images/muneebprof.png",
   email: "mrmuneebbutt69@gmail.com",
   phone: "03234554941",
   phoneTel: "+923234554941",

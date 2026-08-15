@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     siteName: "Muneeb Portfolio",
     images: [
       {
-        url: "/images/muneeb-portrait.jpg",
+        url: "/images/muneebprof.png",
         width: 1200,
         height: 630,
         alt: "Muneeb - Social & Digital Media Expert",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     title: "Muneeb — Social & Digital Media Expert",
     description:
       "Cinematic portfolio of Muneeb, Video Editor, Content Strategist & Social Media Manager.",
-    images: ["/images/muneeb-portrait.jpg"],
+    images: ["/images/muneebprof.png"],
   },
   robots: {
     index: true,
