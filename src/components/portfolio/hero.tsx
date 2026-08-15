@@ -41,12 +41,12 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 sm:pt-28 pb-12 sm:pb-16 overflow-hidden film-grain">
-      {/* Background Editorial Watermark */}
+      {/* Background Editorial Watermark — Strictly position on left side behind headline so it NEVER extends behind profile card */}
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none text-[10vw] font-black tracking-widest text-[#8FD3C7]/[0.015] uppercase whitespace-nowrap z-0 hidden sm:block"
+        className="absolute top-1/3 left-6 sm:left-12 select-none pointer-events-none text-[12vw] font-black tracking-widest text-[#8FD3C7]/[0.015] uppercase whitespace-nowrap z-0 hidden lg:block max-w-[45vw] overflow-hidden"
         aria-hidden="true"
       >
-        CREATE CONTENT
+        CREATE
       </div>
 
       {/* Studio Lighting Beam & Camera Lens SVG Accents */}
@@ -274,7 +274,7 @@ export function Hero() {
               </div>
             </div>
 
-            {/* Floating Label Badges (Responsive scaling on small screens) */}
+            {/* Floating Label Badges */}
             <div className="absolute -top-3 sm:-top-4 -left-2 sm:-left-6 z-30 pointer-events-none">
               <div className="p-2 sm:p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-2 sm:space-x-3">
                 <div className="p-1 sm:p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">
