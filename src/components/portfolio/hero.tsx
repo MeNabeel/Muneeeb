@@ -1,25 +1,40 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowUpRight, Video, Share2, Lightbulb, RefreshCw, Mail } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Video, Share2, Lightbulb, RefreshCw, GraduationCap, Award } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { personalDetails } from "@/data/portfolio";
 
 export function Hero() {
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isFlippedManual, setIsFlippedManual] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [autoFlipIndex, setAutoFlipIndex] = useState(0);
+
+  // Auto-flip every 5 seconds, pausing when user hovers over the card
+  useEffect(() => {
+    if (isHovered) return;
+
+    const timer = setInterval(() => {
+      setAutoFlipIndex((prev) => prev + 1);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [isHovered]);
+
+  const isFlipped = (autoFlipIndex % 2 === 1) || isFlippedManual || isHovered;
 
   const handleCardClick = () => {
-    setIsFlipped(!isFlipped);
+    setIsFlippedManual(!isFlippedManual);
   };
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
-      setIsFlipped(!isFlipped);
+      setIsFlippedManual(!isFlippedManual);
     }
   };
 
@@ -130,14 +145,16 @@ export function Hero() {
           <div
             tabIndex={0}
             role="button"
-            aria-label="Profile card. Hover or press Enter to flip for bio details."
+            aria-label="Profile card. Auto flips every 5 seconds. Hover or press Enter to flip for bio details."
             onClick={handleCardClick}
             onKeyDown={handleKeyDown}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
             className="perspective-1000 w-full max-w-md aspect-[4/5] relative cursor-pointer group focus:outline-none focus:ring-1 focus:ring-[#8FD3C7]"
           >
             <div
               className={`w-full h-full relative transition-transform duration-700 transform-style-3d ${
-                isFlipped ? "rotate-y-180" : "group-hover:rotate-y-180"
+                isFlipped ? "rotate-y-180" : ""
               }`}
             >
               {/* FRONT OF PROFILE CARD */}
@@ -151,7 +168,7 @@ export function Hero() {
                     sizes="(max-width: 768px) 100vw, 40vw"
                     className="object-cover object-top grayscale-[10%] contrast-105 group-hover:scale-105 transition-all duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E] via-transparent to-transparent opacity-75" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F0E] via-transparent to-transparent opacity-80" />
 
                   {/* Corner Accent Markers */}
                   <div className="absolute top-2 left-2 w-2 h-2 border-t-2 border-l-2 border-[#8FD3C7]" />
@@ -159,89 +176,97 @@ export function Hero() {
                   <div className="absolute bottom-2 left-2 w-2 h-2 border-b-2 border-l-2 border-[#8FD3C7]" />
                   <div className="absolute bottom-2 right-2 w-2 h-2 border-b-2 border-r-2 border-[#8FD3C7]" />
 
-                  {/* Flip Prompt Badge */}
-                  <div className="absolute top-4 right-4 bg-[#0B0F0E]/80 backdrop-blur-md px-2.5 py-1 flex items-center space-x-1.5 text-[10px] uppercase tracking-wider text-[#8FD3C7]">
-                    <RefreshCw className="h-3 w-3 animate-spin" />
-                    <span>Flip Card</span>
+                  {/* Top Right: 5+ YEARS Experience Badge */}
+                  <div className="absolute top-4 right-4 z-20 bg-[#0B0F0E]/90 backdrop-blur-md px-3 py-1.5 border border-[#8FD3C7]/40 shadow-xl flex items-center space-x-1.5">
+                    <Award className="h-3.5 w-3.5 text-[#8FD3C7]" />
+                    <span className="text-[11px] font-black uppercase tracking-wider text-[#E9DDC8]">
+                      5+ Years Exp
+                    </span>
                   </div>
 
-                  {/* Front Bottom Overlay Details */}
-                  <div className="absolute bottom-4 left-4 right-4 text-left space-y-1">
+                  {/* Top Left: Flip Indicator */}
+                  <div className="absolute top-4 left-4 z-20 bg-[#0B0F0E]/80 backdrop-blur-md px-2.5 py-1 flex items-center space-x-1 text-[10px] uppercase tracking-wider text-[#8FD3C7]">
+                    <RefreshCw className="h-3 w-3 animate-spin" />
+                    <span>Auto Flip</span>
+                  </div>
+
+                  {/* Front Bottom-Left Overlay Details (Name completely un-obscured) */}
+                  <div className="absolute bottom-6 left-6 z-20 text-left space-y-1">
                     <p className="text-xs uppercase tracking-widest text-[#8FD3C7] font-bold">
                       {personalDetails.fullTitle}
                     </p>
-                    <h3 className="text-xl font-black uppercase text-[#F7F4ED]">
+                    <h3 className="text-2xl font-black uppercase text-[#F7F4ED]">
                       MUNEEB<span className="text-[#8FD3C7]">.</span>
                     </h3>
                   </div>
                 </div>
               </div>
 
-              {/* BACK OF PROFILE CARD */}
+              {/* BACK OF PROFILE CARD (NO BUTTONS AS REQUESTED) */}
               <div className="absolute inset-0 w-full h-full bg-[#111917] p-8 flex flex-col justify-between text-left rotate-y-180 backface-hidden teal-glow shadow-2xl border-t-2 border-[#8FD3C7]">
                 <div className="space-y-6">
-                  {/* Top Badge */}
+                  {/* Top Header */}
                   <div className="flex items-center justify-between border-b border-[rgba(143,211,199,0.12)] pb-4">
                     <span className="text-xs font-black uppercase tracking-widest text-[#8FD3C7]">
                       Professional Profile
                     </span>
-                    <Badge variant="mint" className="text-[10px] border-none">
-                      {personalDetails.yearsExperience} Experience
+                    <Badge variant="mint" className="text-[10px] border-none font-bold">
+                      5+ YEARS EXP
                     </Badge>
                   </div>
 
                   {/* Bio Paragraph */}
-                  <p className="text-sm text-[#A9B2AE] leading-relaxed">
-                    Social & Digital Media Professional specializing in video editing, content strategy, social media management, YouTube management, audience growth, and digital content creation.
+                  <p className="text-xs sm:text-sm text-[#A9B2AE] leading-relaxed">
+                    Social & Digital Media Professional from Lahore specializing in video production, content management, social strategy, and audience growth across digital platforms.
                   </p>
 
-                  {/* Key Skills Pills */}
-                  <div className="space-y-2">
-                    <p className="text-xs uppercase tracking-wider text-[#E9DDC8] font-bold">
-                      Core Specializations
-                    </p>
-                    <div className="flex flex-wrap gap-1.5">
-                      {["Video Editing", "Content Strategy", "YouTube Growth", "Graphic Design"].map(
-                        (skill) => (
+                  {/* Education & Skill Highlights */}
+                  <div className="space-y-3">
+                    <div className="flex items-start space-x-2 text-xs text-[#E9DDC8]">
+                      <GraduationCap className="h-4 w-4 text-[#8FD3C7] shrink-0 mt-0.5" />
+                      <span>
+                        ICS Physics (Punjab Group of Colleges) &amp; Dankash Institute Certified
+                      </span>
+                    </div>
+
+                    <div className="space-y-1.5 pt-2">
+                      <p className="text-[11px] uppercase tracking-wider text-[#E9DDC8] font-bold">
+                        Core Competencies
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {[
+                          "Social Management",
+                          "Content Strategy",
+                          "Audience Engagement",
+                          "Video Production",
+                          "Performance Analysis",
+                        ].map((skill) => (
                           <span
                             key={skill}
                             className="px-2 py-0.5 text-[10px] uppercase tracking-wider text-[#8FD3C7] bg-[#1F7A70]/20"
                           >
                             {skill}
                           </span>
-                        )
-                      )}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Back CTAs */}
-                <div className="pt-4 border-t border-[rgba(143,211,199,0.12)] flex flex-col space-y-2">
-                  <a
-                    href={personalDetails.whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="w-full bg-[#1F7A70] hover:bg-[#289689] text-[#F7F4ED] text-xs font-bold uppercase tracking-wider py-2.5 px-4 flex items-center justify-center transition-colors"
-                  >
-                    <FaWhatsapp className="mr-2 h-4 w-4 text-base" />
-                    Chat on WhatsApp
-                  </a>
-
-                  <a
-                    href={`mailto:${personalDetails.email}`}
-                    onClick={(e) => e.stopPropagation()}
-                    className="w-full text-[#E9DDC8] hover:text-[#8FD3C7] text-xs font-semibold uppercase tracking-wider py-2 flex items-center justify-center transition-colors"
-                  >
-                    <Mail className="mr-2 h-4 w-4" />
-                    Email Direct
-                  </a>
+                {/* Card Back Footer (Clean text signature, no buttons) */}
+                <div className="pt-4 border-t border-[rgba(143,211,199,0.12)] text-xs text-[#A9B2AE] flex items-center justify-between">
+                  <span className="uppercase tracking-widest font-bold text-[#E9DDC8]">
+                    MUNEEB<span className="text-[#8FD3C7]">.</span>
+                  </span>
+                  <span className="uppercase tracking-wider text-[10px]">
+                    Lahore, Pakistan
+                  </span>
                 </div>
               </div>
             </div>
 
-            {/* Floating Label Badges (Desktop) */}
-            <div className="absolute -top-4 -left-4 sm:-left-6 z-20 pointer-events-none">
+            {/* Floating Label Badges (Desktop) — Positioned on Top-Left & Bottom-Right to avoid hiding name overlay! */}
+            <div className="absolute -top-4 -left-4 sm:-left-6 z-30 pointer-events-none">
               <div className="p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-3">
                 <div className="p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">
                   <Video className="h-4 w-4" />
@@ -253,7 +278,7 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="absolute top-1/2 -right-4 sm:-right-6 z-20 pointer-events-none -translate-y-1/2">
+            <div className="absolute top-1/2 -right-4 sm:-right-6 z-30 pointer-events-none -translate-y-1/2">
               <div className="p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-3">
                 <div className="p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">
                   <Share2 className="h-4 w-4" />
@@ -265,7 +290,8 @@ export function Hero() {
               </div>
             </div>
 
-            <div className="absolute -bottom-4 left-6 sm:left-10 z-20 pointer-events-none">
+            {/* BOTTOM RIGHT FLOATING BADGE (Safe from bottom-left name watermark) */}
+            <div className="absolute -bottom-4 right-4 sm:right-6 z-30 pointer-events-none">
               <div className="p-3 bg-[#0B0F0E]/90 backdrop-blur-md shadow-xl flex items-center space-x-3">
                 <div className="p-1.5 bg-[#1F7A70]/30 text-[#8FD3C7]">
                   <Lightbulb className="h-4 w-4" />

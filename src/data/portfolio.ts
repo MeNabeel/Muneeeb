@@ -63,27 +63,35 @@ export const personalDetails = {
   phoneTel: "+923234554941",
   whatsappNumber: "+923234554941",
   whatsappUrl: `https://wa.me/923234554941?text=${whatsappCustomMessage}`,
-  yearsExperience: "8+ YEARS",
-  aboutHeading: "MORE THAN JUST EDITING.",
-  aboutParagraphs: [
-    "I operate at the intersection of video production, platform algorithm optimization, and brand storytelling. As a digital media strategist with extensive broadcast experience, I bridge the gap between creative execution and audience growth.",
-    "My work spans daily content publishing for tier-1 news networks, end-to-end YouTube ecosystem management, breaking news live coverage, and visual identity design.",
-  ],
+  yearsExperience: "5+ YEARS",
+  aboutHeading: "MY JOURNEY IN DIGITAL MEDIA.",
+  aboutStory: {
+    location: "Lahore, Pakistan",
+    education: [
+      "Matriculation",
+      "Intermediate in Computer Science (ICS Physics) — Punjab Group of Colleges (2019–2021)",
+      "Certification in Social Media Marketing & Management — Dankash Institute",
+    ],
+    bio: [
+      "I am Muneeb, a social and digital media specialist based in Lahore. My path in tech and media started with completing my ICS Physics at Punjab Group of Colleges (2019–2021). Passionate about digital strategy, I pursued specialized certification in Social Media Marketing & Management at Dankash Institute.",
+      "I began my professional career as a Social Media Intern at Dankash Institute for 6 months, building hands-on fundamentals. I then joined Nai Baat Media Network / Lahore Rang as a Social Media Content Executive for 2 years, managing high-volume news publishing and audience growth. Following a 2-month tenure at Aik News, I returned to Nai Baat Media Network / Lahore Rang, where I continue managing digital content today.",
+      "Over the years, I've transformed my training into practical expertise across Social Media Management, Content Strategy, Video Production, Audience Engagement, and Performance Analysis.",
+    ],
+  },
   expertiseAreas: [
-    "Video Editing & Post-Production",
     "Social Media Management",
     "Content Strategy & Planning",
-    "Graphic Design & Print Production",
-    "YouTube Ecosystem & SEO",
-    "Audience Growth & Reach",
-    "Monetization & Performance Analytics",
+    "Video Editing & Production",
+    "Audience Engagement & Growth",
+    "Performance Analysis & Optimization",
+    "YouTube & Platform Management",
   ],
 };
 
 export const trustOrganizations = [
-  { name: "Lahore Rang / Neo News", role: "Assistant Content Manager" },
-  { name: "Dunya News", role: "YouTube Executive" },
-  { name: "Ali Scan", role: "Graphic Designer" },
+  { name: "Nai Baat Media / Lahore Rang", role: "Content Executive" },
+  { name: "Aik News", role: "Social Media Executive" },
+  { name: "Dankash Institute", role: "Social Media Intern" },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -128,227 +136,218 @@ export const socialLinks: SocialLink[] = [
 export const featuredWork: Project[] = [
   {
     id: "project-01",
-    title: "Neo News Broadcast & Digital Content Publishing",
+    title: "Nai Baat Media / Lahore Rang Content Publishing",
     category: "YouTube Content",
     description:
       "End-to-end editorial execution, thumbnail optimization, video clipping, and structured channel management for daily broadcast segments.",
     thumbnail: "/images/thumbnail-youtube.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2025",
+    date: "2023 — Present",
     platform: "YouTube",
     tags: ["YouTube SEO", "Video Editing", "Content Strategy", "Monetization"],
     caseStudy: {
       challenge:
-        "Streamline high-frequency broadcast video publishing across multiple YouTube channels while maximizing viewer retention and click-through rates.",
+        "Streamline high-frequency news video publishing across digital channels while maximizing audience retention and click-through rates.",
       approach:
-        "Implemented standardized editorial workflows, high-contrast thumbnail templates, and search-optimized title metadata.",
+        "Implemented standardized editorial workflows, clear thumbnail templates, and search-optimized title metadata.",
       content:
         "Daily news highlights, press conference cuts, and exclusive digital-first video packages.",
       result:
-        "Consistently improved organic search visibility, video completion rates, and platform revenue performance.",
+        "Consistently improved organic search visibility, video completion rates, and platform engagement.",
     },
   },
   {
     id: "project-02",
-    title: "Cross-Platform Social Media Strategy & Growth",
+    title: "Cross-Platform Social Media Campaign & Growth",
     category: "Social Media",
     description:
-      "Strategic content distribution and audience engagement across Instagram Reels, Facebook Watch, and TikTok for high-volume news network channels.",
+      "Strategic content distribution and audience engagement across Instagram Reels, Facebook Watch, and TikTok for network accounts.",
     thumbnail: "/images/thumbnail-social.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2024 — 2025",
+    date: "2023 — 2025",
     platform: "Instagram / TikTok / Facebook",
     tags: ["Social Media", "Reels", "Audience Growth", "Analytics"],
     caseStudy: {
       challenge:
-        "Repurpose television news content into highly engaging short-form vertical video clips optimized for modern social algorithms.",
+        "Repurpose news content into engaging short-form vertical video clips optimized for modern social algorithms.",
       approach:
-        "Designed vertical framing standard templates, dynamic closed captions, and fast-paced hook editing styles.",
+        "Designed vertical framing templates, dynamic captions, and fast-paced hook editing styles.",
       content:
-        "High-energy news snippets, trending topic breakdowns, and interactive community polls.",
+        "High-energy news snippets, trending topic breakdowns, and interactive community posts.",
       result:
         "Expanded multi-platform follower reach and generated sustained viral engagement across mobile feeds.",
     },
   },
   {
     id: "project-03",
-    title: "Dunya News Breaking Headlines & Live Stream Execution",
+    title: "Aik News Digital Coverage & Headline Packaging",
     category: "Video Editing",
     description:
-      "Rapid-response video editing, live event coverage clipping, headline packaging, and real-time metadata publishing for Dunya News digital channels.",
+      "Rapid-response video editing, live event clipping, headline packaging, and real-time publishing for digital channels.",
     thumbnail: "/images/thumbnail-dunya.jpg",
     youtubeUrl: "https://youtu.be/dQw4w9WgXcQ",
-    date: "Oct 2024 — Jan 2025",
+    date: "2024",
     platform: "YouTube Broadcast",
-    tags: ["Breaking News", "Live Events", "Metadata", "YouTube Executive"],
+    tags: ["Breaking News", "Live Events", "Metadata", "Content Production"],
     caseStudy: {
       challenge:
-        "Deliver breaking press conference feeds and major political developments to digital audiences within minutes of occurrence.",
+        "Deliver breaking press conference feeds and major news developments to digital audiences rapidly.",
       approach:
-        "Built a real-time ingest-to-publish timeline workflow with pre-configured graphics assets and automated tag indexing.",
+        "Built a real-time ingest-to-publish workflow with pre-configured graphics assets and clear tag indexing.",
       content:
         "Live speech cuts, emergency news bulletins, and prime-time talk show highlights.",
       result:
-        "Achieved industry-leading upload speed during peak news cycles with zero compromise on stream quality.",
+        "Achieved rapid upload speed during peak news cycles with zero compromise on quality.",
     },
   },
   {
     id: "project-04",
-    title: "Ali Scan Brand Identity & Prepress Print Production",
-    category: "Graphic Design",
+    title: "Dankash Institute Social Marketing Internship Project",
+    category: "Digital Strategy",
     description:
-      "Comprehensive graphic design suite, vector illustration, color-managed prepress layouts, and commercial print quality assurance.",
+      "Hands-on social media marketing, campaign scheduling, audience research, and brand page optimization during 6-month certification.",
     thumbnail: "/images/thumbnail-graphics.jpg",
-    date: "2017 — 2022",
-    platform: "Print & Graphic Media",
-    tags: ["Photoshop", "Illustrator", "CorelDRAW", "Prepress", "Color Management"],
+    date: "Dankash Institute",
+    platform: "Social Media Marketing",
+    tags: ["Social Marketing", "Content Strategy", "Analytics", "Audience Growth"],
     caseStudy: {
       challenge:
-        "Ensure pixel-perfect vector accuracy and flawless CMYK color conversion across complex commercial printing projects.",
+        "Master practical social media management techniques across organic and paid campaign channels.",
       approach:
-        "Established rigid prepress checklists, custom proofing templates, and high-resolution layout controls.",
+        "Applied structured content calendars, caption optimization, and audience demographic targeting.",
       content:
-        "Corporate branding packages, marketing collateral, packaging designs, and large-format print media.",
+        "Educational posts, video reels, and interactive community outreach.",
       result:
-        "Delivered error-free printing outputs across hundreds of high-volume print runs with 100% color fidelity.",
+        "Earned formal certification and successfully transitioned into full-time professional media roles.",
     },
   },
   {
     id: "project-05",
-    title: "Editorial Short-Form Video Packaging & Motion Reels",
+    title: "Short-Form Video Packaging & Motion Reels",
     category: "Video Editing",
     description:
-      "Cinematic motion graphic integration, color grading, audio leveling, and pacing for engaging digital story reels.",
+      "Cinematic motion graphics, color adjustment, clear audio leveling, and pacing for engaging digital reels.",
     thumbnail: "/images/thumbnail-youtube.jpg",
     youtubeUrl: "https://www.youtube.com/shorts/dQw4w9WgXcQ",
     date: "2024",
     platform: "YouTube Shorts",
-    tags: ["Premiere Pro", "Motion Graphics", "Color Grading", "Shorts"],
+    tags: ["Premiere Pro", "Motion Reels", "Color Grading", "Shorts"],
   },
   {
     id: "project-06",
-    title: "Audience Optimization & Digital Content Architecture",
+    title: "Audience Optimization & Channel Strategy",
     category: "Digital Strategy",
     description:
-      "Holistic channel management, playlist structuring, community post scheduling, and monetization compliance across network channels.",
+      "Channel management, playlist structuring, community post scheduling, and performance monitoring across network channels.",
     thumbnail: "/images/thumbnail-social.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     date: "2023 — Present",
     platform: "Multi-Platform",
-    tags: ["YouTube Management", "Monetization", "Content Strategy"],
+    tags: ["YouTube Management", "Audience Engagement", "Content Strategy"],
   },
 ];
 
 export const experienceTimeline: ExperienceItem[] = [
   {
     id: "exp-1",
-    period: "2025 — Present",
-    company: "Lahore Rang / Neo News",
-    role: "Assistant Content Manager",
+    period: "2024 — Present",
+    company: "Nai Baat Media Network / Lahore Rang",
+    role: "Social Media Content Executive",
     isCurrent: true,
     responsibilities: [
-      "Managing YouTube, Facebook, Instagram, and TikTok content strategy",
-      "Daily content publishing and broadcast asset workflow coordination",
-      "Improving organic reach, audience retention, and performance metrics",
-      "Supporting digital revenue generation, monetization, and rights management",
-      "Strategic content planning, editorial scheduling, and team coordination",
+      "Managing social media content publishing across YouTube, Facebook, Instagram, and TikTok",
+      "Executing daily content strategy, video clipping, and thumbnail placement",
+      "Monitoring audience reach, engagement analytics, and channel growth metrics",
+      "Coordinating content scheduling, editorial planning, and team workflows",
     ],
   },
   {
     id: "exp-2",
-    period: "Oct 2024 — Jan 2025",
-    company: "Dunya News",
-    role: "YouTube Executive",
+    period: "2024 (2 Months)",
+    company: "Aik News",
+    role: "Social Media Executive",
     responsibilities: [
-      "Managing and publishing high-volume YouTube news content",
-      "Editing breaking news, headlines, live events, and press conferences",
-      "Executing YouTube SEO, thumbnail placement, and metadata indexing",
-      "Monitoring performance analytics and audience traffic sources",
+      "Managing news clip packaging, headlines publishing, and digital distribution",
+      "Executing rapid video uploads for breaking news and press conference feeds",
+      "Applying title metadata and search tag indexing for peak news cycles",
     ],
   },
   {
     id: "exp-3",
-    period: "Jan 2023 — Oct 2024",
-    company: "Lahore Rang / Neo News",
-    role: "Social Media Executive",
+    period: "2022 — 2024 (2 Years)",
+    company: "Nai Baat Media Network / Lahore Rang",
+    role: "Social Media Content Executive",
     responsibilities: [
-      "Overseeing core social accounts on YouTube, Facebook, TikTok, and Instagram",
-      "Formulating digital content strategy and channel positioning",
-      "Driving audience growth and community engagement",
-      "Managing channel monetization standards and platform policy compliance",
+      "Overseeing channel publishing across YouTube, Facebook, TikTok, and Instagram",
+      "Formulating short-form vertical video strategies and community engagement",
+      "Driving organic audience growth and monitoring platform metrics",
     ],
   },
   {
     id: "exp-4",
-    period: "Apr 2017 — Dec 2022",
-    company: "Ali Scan",
-    role: "Graphic Designer",
+    period: "6 Months",
+    company: "Dankash Institute",
+    role: "Social Media Intern",
     responsibilities: [
-      "Creative graphic design and vector layout production",
-      "Design-to-print production workflows and prepress technical checks",
-      "Color management, proofing, and rigorous quality assurance",
-      "Printing coordination and client design requirement execution",
+      "Completed intensive certification in Social Media Marketing & Management",
+      "Executed hands-on social campaign planning, post scheduling, and page management",
+      "Analyzed audience engagement metrics and supported digital marketing initiatives",
     ],
   },
 ];
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Creative Tools",
+    title: "Core Expertise",
     skills: [
       {
-        name: "Adobe Premiere",
-        description: "Professional multi-track video editing, timeline pacing & audio sync",
+        name: "Social Media Management",
+        description: "End-to-end channel publishing across YouTube, Facebook, Instagram & TikTok",
+        category: "management",
+      },
+      {
+        name: "Content Strategy & Planning",
+        description: "Editorial scheduling, topic research, framing & audience targeting",
+        category: "publishing",
+      },
+      {
+        name: "Video & Content Production",
+        description: "Multi-track video editing, timeline pacing, news clipping & reels packaging",
         category: "editing",
       },
       {
-        name: "Adobe Photoshop",
-        description: "High-impact thumbnail design, photo manipulation & visual assets",
-        category: "design",
+        name: "Audience Engagement",
+        description: "Community outreach, comment interaction & organic follower growth",
+        category: "management",
       },
       {
-        name: "Adobe Illustrator",
-        description: "Vector graphics, lower thirds, logos & typography design",
-        category: "design",
-      },
-      {
-        name: "CorelDRAW",
-        description: "Prepress printing layouts, vector artwork & commercial design",
-        category: "design",
-      },
-      {
-        name: "InPage",
-        description: "Urdu typography typesetting, news graphic overlay & publication layout",
+        name: "Performance Analysis",
+        description: "Platform analytics, click-through optimization & reach metrics",
         category: "publishing",
       },
     ],
   },
   {
-    title: "Platform Management",
+    title: "Software & Tools",
     skills: [
       {
-        name: "YouTube Management",
-        description: "SEO optimization, channel monetization, analytics & playlist curation",
+        name: "Adobe Premiere Pro",
+        description: "Professional video editing, timeline pacing & audio leveling",
+        category: "editing",
+      },
+      {
+        name: "Adobe Photoshop",
+        description: "High-impact thumbnail design, graphics & photo editing",
+        category: "design",
+      },
+      {
+        name: "YouTube Ecosystem",
+        description: "SEO optimization, metadata indexing & channel curation",
         category: "management",
       },
       {
-        name: "Facebook Management",
-        description: "Video publishing, page growth, rights manager & audience engagement",
-        category: "management",
-      },
-      {
-        name: "Instagram Management",
-        description: "Reels strategy, grid aesthetics, story engagement & hashtag architecture",
-        category: "management",
-      },
-      {
-        name: "TikTok Management",
-        description: "Vertical video trends, sound selection & rapid algorithm hooks",
-        category: "management",
-      },
-      {
-        name: "Twitter/X Management",
-        description: "Real-time news updates, thread curation & audience interaction",
+        name: "Meta Suite & TikTok",
+        description: "Reels strategy, Page publishing & trending content hooks",
         category: "management",
       },
     ],

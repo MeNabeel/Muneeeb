@@ -51,11 +51,11 @@ export function SocialIcons({
           rel="noopener noreferrer"
           aria-label={platform.ariaLabel}
           title={platform.name}
-          className="text-[#A9B2AE] hover:text-[#8FD3C7] transition-all duration-300 transform hover:scale-125 hover:-translate-y-1 inline-flex items-center space-x-2 border-none outline-none focus-visible:text-[#8FD3C7]"
+          className="w-7 h-7 flex items-center justify-center text-center text-[#A9B2AE] hover:text-[#8FD3C7] transition-all duration-300 transform hover:scale-125 hover:-translate-y-1 border-none outline-none focus-visible:text-[#8FD3C7] shrink-0"
         >
           {getIcon(platform.platformKey)}
           {showLabels && (
-            <span className="text-xs uppercase tracking-wider font-semibold">
+            <span className="text-xs uppercase tracking-wider font-semibold ml-2">
               {platform.name}
             </span>
           )}

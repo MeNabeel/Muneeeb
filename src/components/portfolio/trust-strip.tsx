@@ -14,7 +14,7 @@ export function TrustStrip() {
               Professional Footprint
             </p>
             <h2 className="text-lg md:text-xl font-bold uppercase tracking-wider text-[#F7F4ED]">
-              Organizations & Networks
+              Organizations &amp; Experience
             </h2>
           </div>
 
