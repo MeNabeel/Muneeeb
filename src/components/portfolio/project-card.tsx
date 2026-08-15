@@ -34,7 +34,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           onSelect(project);
         }
       }}
-      className="bg-[#111917] border-none shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)] transition-all duration-500 group cursor-pointer overflow-hidden relative flex flex-col justify-between rounded-none focus:outline-none focus:ring-1 focus:ring-[#8FD3C7]"
+      className="bg-[#111917] border-none shadow-xl hover:shadow-[0_15px_40px_rgba(0,0,0,0.6)] transition-all duration-500 group cursor-pointer overflow-hidden relative flex flex-col justify-between rounded-none focus:outline-none focus:ring-1 focus:ring-[#8FD3C7] w-full"
     >
       <div>
         {/* Thumbnail Preview Box with NLE Corner Markers & Play Overlay */}
@@ -43,8 +43,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             src={project.thumbnail}
             alt={project.title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover object-center grayscale-[15%] group-hover:grayscale-0 group-hover:scale-108 transition-all duration-700"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover object-center grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
           />
 
           {/* Film Frame Crop Brackets */}
@@ -57,12 +57,12 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8FD3C7]/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scanline pointer-events-none" />
 
           {/* Duration & Category Badges */}
-          <div className="absolute top-3 left-3 right-3 flex items-center justify-between z-20">
-            <Badge variant="mint" className="text-[10px] uppercase font-bold tracking-wider border-none">
+          <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 right-2.5 sm:right-3 flex items-center justify-between z-20">
+            <Badge variant="mint" className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider border-none px-2 py-0.5">
               {project.category}
             </Badge>
 
-            <div className="flex items-center space-x-1 px-2 py-0.5 bg-[#0B0F0E]/80 backdrop-blur-md text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.2)]">
+            <div className="flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/80 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.2)]">
               <Clock className="h-3 w-3" />
               <span>{getTimecode(project.id)}</span>
             </div>
@@ -71,8 +71,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           {/* Hover Play Icon Badge */}
           {project.youtubeUrl && (
             <div className="absolute inset-0 flex items-center justify-center z-20">
-              <div className="w-12 h-12 bg-[#8FD3C7]/90 text-[#0B0F0E] flex items-center justify-center transform scale-75 group-hover:scale-100 opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl">
-                <Play className="h-6 w-6 fill-current ml-0.5" />
+              <div className="w-10 sm:w-12 h-10 sm:h-12 bg-[#8FD3C7]/90 text-[#0B0F0E] flex items-center justify-center transform scale-90 group-hover:scale-100 opacity-90 sm:opacity-0 group-hover:opacity-100 transition-all duration-300 shadow-2xl">
+                <Play className="h-5 sm:h-6 w-5 sm:w-6 fill-current ml-0.5" />
               </div>
             </div>
           )}
@@ -87,8 +87,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
         </div>
 
         {/* Card Content Body */}
-        <CardContent className="p-6 space-y-3">
-          <div className="flex items-center justify-between text-[11px] text-[#A9B2AE]">
+        <CardContent className="p-4 sm:p-6 space-y-2.5 sm:space-y-3">
+          <div className="flex items-center justify-between text-[10px] sm:text-[11px] text-[#A9B2AE]">
             <span className="uppercase tracking-widest text-[#8FD3C7] font-semibold flex items-center">
               <Film className="h-3 w-3 mr-1" />
               {project.platform || "Media Project"}
@@ -96,7 +96,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             {project.date && <span>{project.date}</span>}
           </div>
 
-          <h3 className="text-xl font-bold uppercase text-[#F7F4ED] group-hover:text-[#8FD3C7] transition-colors line-clamp-2">
+          <h3 className="text-lg sm:text-xl font-bold uppercase text-[#F7F4ED] group-hover:text-[#8FD3C7] transition-colors line-clamp-2 leading-snug">
             {project.title}
           </h3>
 
@@ -107,8 +107,8 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
       </div>
 
       {/* Footer Action */}
-      <div className="px-6 pb-6 pt-0 flex items-center justify-between text-xs font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors border-t border-[rgba(143,211,199,0.08)] mt-2">
-        <span className="uppercase tracking-wider">Inspect Sequence</span>
+      <div className="px-4 sm:px-6 pb-4 sm:pb-6 pt-0 flex items-center justify-between text-xs font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors border-t border-[rgba(143,211,199,0.08)] mt-2">
+        <span className="uppercase tracking-wider text-[11px]">Inspect Sequence</span>
         <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
       </div>
     </Card>

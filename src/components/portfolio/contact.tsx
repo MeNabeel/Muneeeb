@@ -40,43 +40,43 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 bg-[#0B0F0E] relative overflow-hidden film-grain">
+    <section id="contact" className="py-16 sm:py-24 bg-[#0B0F0E] relative overflow-hidden film-grain">
       {/* Background Radial Ambient Glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-[#1F7A70]/15 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] sm:w-[700px] h-[200px] sm:h-[350px] bg-[#1F7A70]/15 rounded-full blur-[100px] sm:blur-[150px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10 space-y-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 relative z-10 space-y-8 sm:space-y-12">
         {/* Main Editorial CTA Box */}
-        <Card className="p-8 md:p-16 bg-[#111917] border-none teal-glow-lg text-center flex flex-col items-center justify-center space-y-8 relative overflow-hidden rounded-none">
+        <Card className="p-6 sm:p-12 md:p-16 bg-[#111917] border-none teal-glow-lg text-center flex flex-col items-center justify-center space-y-6 sm:space-y-8 relative overflow-hidden rounded-none">
           {/* Corner Decorative Framing */}
-          <div className="absolute top-4 left-4 w-4 h-4 border-t-2 border-l-2 border-[#8FD3C7]" />
-          <div className="absolute top-4 right-4 w-4 h-4 border-t-2 border-r-2 border-[#8FD3C7]" />
-          <div className="absolute bottom-4 left-4 w-4 h-4 border-b-2 border-l-2 border-[#8FD3C7]" />
-          <div className="absolute bottom-4 right-4 w-4 h-4 border-b-2 border-r-2 border-[#8FD3C7]" />
+          <div className="absolute top-3 left-3 w-3 h-3 sm:w-4 sm:h-4 border-t-2 border-l-2 border-[#8FD3C7]" />
+          <div className="absolute top-3 right-3 w-3 h-3 sm:w-4 sm:h-4 border-t-2 border-r-2 border-[#8FD3C7]" />
+          <div className="absolute bottom-3 left-3 w-3 h-3 sm:w-4 sm:h-4 border-b-2 border-l-2 border-[#8FD3C7]" />
+          <div className="absolute bottom-3 right-3 w-3 h-3 sm:w-4 sm:h-4 border-b-2 border-r-2 border-[#8FD3C7]" />
 
           <motion.div
-            className="space-y-4 max-w-3xl"
+            className="space-y-3 sm:space-y-4 max-w-3xl"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold">
+            <span className="text-[11px] sm:text-xs uppercase tracking-widest text-[#8FD3C7] font-semibold">
               Initiate Collaboration
             </span>
 
-            <h2 className="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tight text-[#F7F4ED] leading-none">
+            <h2 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-tight text-[#F7F4ED] leading-none">
               HAVE A STORY <br />
               <span className="text-[#8FD3C7]">WORTH WATCHING?</span>
             </h2>
 
-            <p className="text-base sm:text-xl text-[#A9B2AE] max-w-xl mx-auto pt-2">
+            <p className="text-sm sm:text-lg md:text-xl text-[#A9B2AE] max-w-xl mx-auto pt-1 sm:pt-2">
               Let&apos;s create content that connects, engages, and leaves a lasting impact.
             </p>
           </motion.div>
 
           {/* Action Buttons: ONLY TWO BUTTONS (WhatsApp Muneeb & Contact Form) */}
           <motion.div
-            className="flex flex-wrap items-center justify-center gap-5 pt-2"
+            className="flex flex-wrap items-center justify-center gap-4 pt-2 w-full max-w-md"
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -87,7 +87,7 @@ export function Contact() {
               asChild
               variant="mint"
               size="lg"
-              className="text-base px-8 py-6 group cursor-pointer"
+              className="text-xs sm:text-base px-6 sm:px-8 py-5 sm:py-6 group cursor-pointer w-full sm:w-auto justify-center"
             >
               <a
                 href={personalDetails.whatsappUrl}
@@ -95,9 +95,9 @@ export function Contact() {
                 rel="noopener noreferrer"
                 aria-label="Contact Muneeb on WhatsApp"
               >
-                <FaWhatsapp className="mr-2.5 h-5 w-5 text-xl" />
+                <FaWhatsapp className="mr-2 h-4 sm:h-5 w-4 sm:w-5 text-base sm:text-xl" />
                 WhatsApp Muneeb
-                <ArrowUpRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                <ArrowUpRight className="ml-1.5 h-4 sm:h-5 w-4 sm:w-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </Button>
 
@@ -106,28 +106,28 @@ export function Contact() {
               variant="outline"
               size="lg"
               onClick={() => dispatch(setContactDialogOpen(true))}
-              className="text-base px-8 py-6 rounded-none cursor-pointer border-[rgba(143,211,199,0.25)] text-[#E9DDC8] hover:text-[#8FD3C7]"
+              className="text-xs sm:text-base px-6 sm:px-8 py-5 sm:py-6 rounded-none cursor-pointer border-[rgba(143,211,199,0.25)] text-[#E9DDC8] hover:text-[#8FD3C7] w-full sm:w-auto justify-center"
             >
               Contact Form
-              <ArrowUpRight className="ml-2 h-5 w-5" />
+              <ArrowUpRight className="ml-1.5 h-4 sm:h-5 w-4 sm:w-5" />
             </Button>
           </motion.div>
         </Card>
 
         {/* Clean Contact Information Strip */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
           {/* Email Item */}
           <a
             href={`mailto:${personalDetails.email}`}
             aria-label="Email Muneeb"
-            className="p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
+            className="p-4 sm:p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
           >
-            <div className="p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors">
+            <div className="p-2.5 sm:p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors shrink-0">
               <Mail className="h-5 w-5" />
             </div>
-            <div>
+            <div className="min-w-0 flex-1">
               <p className="text-[10px] uppercase tracking-widest text-[#A9B2AE]">Direct Email</p>
-              <p className="text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors truncate max-w-[200px] sm:max-w-xs">
+              <p className="text-xs sm:text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors truncate">
                 {personalDetails.email}
               </p>
             </div>
@@ -137,14 +137,14 @@ export function Contact() {
           <a
             href={`tel:${personalDetails.phoneTel}`}
             aria-label="Call Muneeb"
-            className="p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
+            className="p-4 sm:p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
           >
-            <div className="p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors">
+            <div className="p-2.5 sm:p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors shrink-0">
               <Phone className="h-5 w-5" />
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-[#A9B2AE]">Phone / Mobile</p>
-              <p className="text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors">
+              <p className="text-xs sm:text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors">
                 {personalDetails.phone}
               </p>
             </div>
@@ -156,14 +156,14 @@ export function Contact() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contact Muneeb on WhatsApp"
-            className="p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
+            className="p-4 sm:p-6 bg-[#111917] shadow-xl hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all group flex items-center space-x-4 border-none"
           >
-            <div className="p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors">
+            <div className="p-2.5 sm:p-3 bg-[#1F7A70]/20 text-[#8FD3C7] group-hover:bg-[#8FD3C7] group-hover:text-[#0B0F0E] transition-colors shrink-0">
               <FaWhatsapp className="h-5 w-5 text-lg" />
             </div>
             <div>
               <p className="text-[10px] uppercase tracking-widest text-[#A9B2AE]">WhatsApp Direct</p>
-              <p className="text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors">
+              <p className="text-xs sm:text-sm font-bold text-[#E9DDC8] group-hover:text-[#8FD3C7] transition-colors">
                 Chat on WhatsApp
               </p>
             </div>
@@ -173,19 +173,19 @@ export function Contact() {
 
       {/* Interactive Contact Dialog Form */}
       <Dialog open={dialogOpen} onOpenChange={(open) => dispatch(setContactDialogOpen(open))}>
-        <DialogContent className="max-w-xl p-6 sm:p-8 bg-[#111917] border-none shadow-2xl">
+        <DialogContent className="max-w-xl p-5 sm:p-8 bg-[#111917] border-none shadow-2xl w-[92vw] max-h-[90vh] overflow-y-auto">
           {!formSubmitted ? (
             <>
-              <DialogHeader className="space-y-2">
-                <DialogTitle className="text-2xl font-black uppercase text-[#E9DDC8]">
+              <DialogHeader className="space-y-2 text-left">
+                <DialogTitle className="text-xl sm:text-2xl font-black uppercase text-[#E9DDC8]">
                   Start a Conversation
                 </DialogTitle>
-                <DialogDescription className="text-sm text-[#A9B2AE]">
+                <DialogDescription className="text-xs sm:text-sm text-[#A9B2AE]">
                   Fill out the details below to discuss video editing, YouTube strategy, or social media management.
                 </DialogDescription>
               </DialogHeader>
 
-              <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+              <form onSubmit={handleSubmit} className="space-y-4 mt-4 text-left">
                 <div className="space-y-1">
                   <label className="text-xs uppercase tracking-wider text-[#E9DDC8]">Your Name</label>
                   <input
@@ -227,7 +227,7 @@ export function Contact() {
                 <div className="space-y-1">
                   <label className="text-xs uppercase tracking-wider text-[#E9DDC8]">Project Outline</label>
                   <textarea
-                    rows={4}
+                    rows={3}
                     required
                     placeholder="Briefly describe your objectives or inquiry..."
                     value={formData.message}
@@ -236,19 +236,19 @@ export function Contact() {
                   />
                 </div>
 
-                <Button type="submit" variant="mint" className="w-full mt-2">
+                <Button type="submit" variant="mint" className="w-full mt-2 h-11">
                   <Send className="mr-2 h-4 w-4" />
                   Send Inquiry
                 </Button>
               </form>
             </>
           ) : (
-            <div className="py-8 text-center space-y-4">
+            <div className="py-6 text-center space-y-4">
               <div className="mx-auto w-12 h-12 rounded-full bg-[#8FD3C7]/20 text-[#8FD3C7] flex items-center justify-center">
                 <CheckCircle2 className="h-8 w-8" />
               </div>
-              <h3 className="text-2xl font-black uppercase text-[#E9DDC8]">Inquiry Received</h3>
-              <p className="text-sm text-[#A9B2AE]">
+              <h3 className="text-xl sm:text-2xl font-black uppercase text-[#E9DDC8]">Inquiry Received</h3>
+              <p className="text-xs sm:text-sm text-[#A9B2AE]">
                 Thank you for reaching out. Your message has been dispatched successfully.
               </p>
               <Button variant="outline" onClick={handleReset} className="mt-4">
