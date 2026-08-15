@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #0B0F0E;
+    --bg-forest: #111917;
+    --accent-teal: #1F7A70;
+    --accent-mint: #8FD3C7;
+    --accent-beige: #E9DDC8;
+    --text-primary: #F7F4ED;
+    --text-muted: #A9B2AE;
+    --border-subtle: rgba(143, 211, 199, 0.18);
+  }
+
+  body {
+    background-color: var(--bg-obsidian);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    selection-background-color: var(--accent-teal);
+    selection-color: var(--bg-obsidian);
+  }
+}
+
+/* Custom Film Grain Texture Overlay */
+.film-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Teal Lighting Subtle Radial Glow */
+.teal-glow {
+  box-shadow: 0 0 40px -10px rgba(143, 211, 199, 0.15);
+}
+
+.teal-glow-lg {
+  box-shadow: 0 0 80px -15px rgba(31, 122, 112, 0.35);
+}
+
+/* Subtle Editorial Border */
+.editorial-border {
+  border: 1px solid var(--border-subtle);
+}
+
+/* Horizontal Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F0E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(143, 211, 199, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1F7A70;
+}
+
+/* Continuous Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee-reverse {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite reverse;
+}
+
+.animate-marquee:hover,
+.animate-marquee-reverse:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee,
+  .animate-marquee-reverse {
+    animation: none;
+    transform: none;
+  }
+}
