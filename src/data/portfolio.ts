@@ -41,6 +41,12 @@ export interface SocialLink {
   ariaLabel: string;
 }
 
+export interface ChannelLogo {
+  name: string;
+  logo: string;
+  role: string;
+}
+
 // Pre-filled WhatsApp message URL
 const whatsappCustomMessage = encodeURIComponent(
   "Hi Muneeb, I saw your portfolio and would like to discuss a project with you."
@@ -88,10 +94,18 @@ export const personalDetails = {
   ],
 };
 
-export const trustOrganizations = [
-  { name: "Nai Baat Media / Lahore Rang", role: "Content Executive" },
-  { name: "Aik News", role: "Social Media Executive" },
-  { name: "Dankash Institute", role: "Social Media Intern" },
+export const trustOrganizations: ChannelLogo[] = [
+  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Content Executive" },
+  { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Content Executive" },
+  { name: "Dunya News", logo: "/images/dunya-removebg-preview.png", role: "YouTube Executive" },
+  { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "Social Media Executive" },
+];
+
+export const channelLogos: ChannelLogo[] = [
+  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Broadcast Network" },
+  { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Digital Media" },
+  { name: "Dunya News", logo: "/images/dunya-removebg-preview.png", role: "News Network" },
+  { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "News Channel" },
 ];
 
 export const socialLinks: SocialLink[] = [
@@ -136,13 +150,13 @@ export const socialLinks: SocialLink[] = [
 export const featuredWork: Project[] = [
   {
     id: "project-01",
-    title: "Nai Baat Media / Lahore Rang Content Publishing",
+    title: "Neo News Broadcast & Digital Content Publishing",
     category: "YouTube Content",
     description:
       "End-to-end editorial execution, thumbnail optimization, video clipping, and structured channel management for daily broadcast segments.",
     thumbnail: "/images/thumbnail-youtube.jpg",
     youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2023 — Present",
+    date: "2025",
     platform: "YouTube",
     tags: ["YouTube SEO", "Video Editing", "Content Strategy", "Monetization"],
     caseStudy: {
@@ -180,13 +194,13 @@ export const featuredWork: Project[] = [
   },
   {
     id: "project-03",
-    title: "Aik News Digital Coverage & Headline Packaging",
+    title: "Dunya News Breaking Headlines & Live Ingest",
     category: "Video Editing",
     description:
-      "Rapid-response video editing, live event clipping, headline packaging, and real-time publishing for digital channels.",
+      "Rapid-response video editing, live event clipping, headline packaging, and real-time metadata publishing for Dunya News digital channels.",
     thumbnail: "/images/thumbnail-dunya.jpg",
     youtubeUrl: "https://youtu.be/dQw4w9WgXcQ",
-    date: "2024",
+    date: "Oct 2024 — Jan 2025",
     platform: "YouTube Broadcast",
     tags: ["Breaking News", "Live Events", "Metadata", "Content Production"],
     caseStudy: {
@@ -202,24 +216,14 @@ export const featuredWork: Project[] = [
   },
   {
     id: "project-04",
-    title: "Dankash Institute Social Marketing Internship Project",
-    category: "Digital Strategy",
+    title: "Ali Scan Prepress & Print Graphic Suite",
+    category: "Graphic Design",
     description:
-      "Hands-on social media marketing, campaign scheduling, audience research, and brand page optimization during 6-month certification.",
+      "Comprehensive graphic design suite, vector illustration, color-managed prepress layouts, and commercial print quality assurance.",
     thumbnail: "/images/thumbnail-graphics.jpg",
-    date: "Dankash Institute",
-    platform: "Social Media Marketing",
-    tags: ["Social Marketing", "Content Strategy", "Analytics", "Audience Growth"],
-    caseStudy: {
-      challenge:
-        "Master practical social media management techniques across organic and paid campaign channels.",
-      approach:
-        "Applied structured content calendars, caption optimization, and audience demographic targeting.",
-      content:
-        "Educational posts, video reels, and interactive community outreach.",
-      result:
-        "Earned formal certification and successfully transitioned into full-time professional media roles.",
-    },
+    date: "2017 — 2022",
+    platform: "Print & Graphic Media",
+    tags: ["Photoshop", "Illustrator", "CorelDRAW", "Prepress", "Color Management"],
   },
   {
     id: "project-05",
@@ -244,6 +248,42 @@ export const featuredWork: Project[] = [
     date: "2023 — Present",
     platform: "Multi-Platform",
     tags: ["YouTube Management", "Audience Engagement", "Content Strategy"],
+  },
+  {
+    id: "project-07",
+    title: "Lahore Rang Digital Media Packaging",
+    category: "Social Media",
+    description:
+      "Digital media branding, daily post packaging, and short-form video publishing for Lahore Rang channel feeds.",
+    thumbnail: "/images/lahorerang-removebg-preview.png",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    date: "Lahore Rang",
+    platform: "Lahore Rang",
+    tags: ["Lahore Rang", "Social Media", "Video Content", "Branding"],
+  },
+  {
+    id: "project-08",
+    title: "Neo News Channel Content Strategy",
+    category: "Digital Strategy",
+    description:
+      "Broadcast clipping strategy, channel curation, and digital monetization workflows for Neo News network channels.",
+    thumbnail: "/images/NEO-removebg-preview.png",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    date: "Neo News",
+    platform: "Neo News",
+    tags: ["Neo News", "Broadcast", "YouTube SEO", "Strategy"],
+  },
+  {
+    id: "project-09",
+    title: "Aik News Digital Newsroom Coverage",
+    category: "YouTube Content",
+    description:
+      "Newsroom headline publishing, rapid breaking news cuts, and platform SEO metadata management.",
+    thumbnail: "/images/aik-removebg-preview.png",
+    youtubeUrl: "https://youtu.be/dQw4w9WgXcQ",
+    date: "Aik News",
+    platform: "Aik News",
+    tags: ["Aik News", "Breaking News", "Headline Cuts", "Publishing"],
   },
 ];
 
