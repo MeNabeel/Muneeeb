@@ -77,16 +77,23 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Headline - Scaled size to fit single line without breaking word */}
-          <div className="space-y-1">
+          {/* Headline - 4 Distinct Single Lines */}
+          <div className="space-y-0.5 sm:space-y-1">
+            {/* Line 1: I CREATE */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#F7F4ED] whitespace-nowrap">
               {personalDetails.heroHeadline.line1}
             </h1>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#8FD3C7] drop-shadow-[0_0_25px_rgba(143,211,199,0.25)] whitespace-nowrap">
+            {/* Line 2: CONTENT (Reduced size, single line) */}
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl xl:text-6xl font-black tracking-tight leading-none uppercase text-[#8FD3C7] drop-shadow-[0_0_25px_rgba(143,211,199,0.25)] whitespace-nowrap">
               {personalDetails.heroHeadline.accent}
             </h1>
+            {/* Line 3: THAT */}
             <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#F7F4ED] whitespace-nowrap">
               {personalDetails.heroHeadline.line2}
+            </h1>
+            {/* Line 4: MOVES. */}
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight leading-none uppercase text-[#F7F4ED] whitespace-nowrap">
+              {personalDetails.heroHeadline.line3}
             </h1>
           </div>
 

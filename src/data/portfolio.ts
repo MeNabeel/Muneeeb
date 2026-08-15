@@ -59,7 +59,8 @@ export const personalDetails = {
   heroHeadline: {
     line1: "I CREATE",
     accent: "CONTENT",
-    line2: "THAT MOVES.",
+    line2: "THAT",
+    line3: "MOVES.",
   },
   heroDescription:
     "I create and manage digital content across platforms, combining video, design, social strategy, and audience-focused storytelling.",
