@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Play, ArrowUpRight, Film, Clock, Eye } from "lucide-react";
+import { Play, ArrowUpRight, Film, Eye } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Project } from "@/data/portfolio";
@@ -14,14 +14,6 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, onSelect }: ProjectCardProps) {
-  // Generate pseudo timecodes for video editing suite aesthetic
-  const getTimecode = (id: string) => {
-    const num = parseInt(id.replace(/\D/g, "") || "1", 10);
-    const mins = String((num * 2 + 1) % 10).padStart(2, "0");
-    const secs = String((num * 14 + 12) % 60).padStart(2, "0");
-    return `${mins}:${secs}`;
-  };
-
   return (
     <Card
       onClick={() => onSelect(project)}
@@ -56,25 +48,19 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           {/* Laser Scan Line on Hover */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8FD3C7]/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scanline pointer-events-none" />
 
-          {/* Badges: Category (Top-Left) & Views / Duration (Top-Right) */}
+          {/* Top Badges: Category (Left) & Prominent Media Stat View Count (Right) */}
           <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 right-2.5 sm:right-3 flex items-center justify-between z-20">
             <Badge variant="mint" className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider border-none px-2 py-0.5">
               {project.category}
             </Badge>
 
-            <div className="flex items-center space-x-2">
-              {project.views && (
-                <div className="flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/90 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#E9DDC8] border border-[rgba(233,221,200,0.3)] shadow-lg font-bold">
-                  <Eye className="h-3 w-3 text-[#8FD3C7]" />
-                  <span>{project.views}</span>
-                </div>
-              )}
-
-              <div className="hidden sm:flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/80 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.2)]">
-                <Clock className="h-3 w-3" />
-                <span>{getTimecode(project.id)}</span>
+            {/* Prominent View-Count Stat Badge (No Timestamps) */}
+            {project.views && (
+              <div className="flex items-center space-x-1.5 px-2 sm:px-2.5 py-1 bg-[#0B0F0E]/90 backdrop-blur-md text-xs font-mono font-bold tracking-wider text-[#8FD3C7] border border-[#8FD3C7]/40 shadow-[0_0_15px_rgba(143,211,199,0.25)] rounded-[1px] group-hover:scale-105 group-hover:border-[#8FD3C7] group-hover:shadow-[0_0_20px_rgba(143,211,199,0.35)] transition-all duration-300">
+                <Eye className="h-3.5 w-3.5 text-[#8FD3C7] animate-pulse" />
+                <span>{project.views}</span>
               </div>
-            </div>
+            )}
           </div>
 
           {/* Hover Play Icon Badge */}

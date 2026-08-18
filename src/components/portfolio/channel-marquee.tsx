@@ -26,17 +26,18 @@ export function ChannelMarquee() {
           {repeatedLogos1.map((item, idx) => (
             <div
               key={`logo1-${item.name}-${idx}`}
-              className="flex items-center space-x-4 px-6 shrink-0 group cursor-pointer"
+              className="flex items-center space-x-4 px-6 shrink-0 cursor-pointer"
             >
-              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
+              {/* Scoped Hover: Only the individually hovered logo scales and glows; others remain in normal state */}
+              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-0.5 hover:drop-shadow-[0_0_16px_rgba(143,211,199,0.35)]">
                 <Image
                   src={item.logo}
                   alt={item.name}
                   fill
-                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
+                  className="object-contain pointer-events-none drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
                 />
               </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] transition-colors hidden sm:inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] hidden sm:inline-block">
                 {item.name}
               </span>
             </div>
@@ -50,17 +51,18 @@ export function ChannelMarquee() {
           {repeatedLogos2.map((item, idx) => (
             <div
               key={`logo2-${item.name}-${idx}`}
-              className="flex items-center space-x-4 px-6 shrink-0 group cursor-pointer"
+              className="flex items-center space-x-4 px-6 shrink-0 cursor-pointer"
             >
-              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-all duration-300 transform group-hover:scale-110">
+              {/* Scoped Hover: Only the individually hovered logo scales and glows; others remain in normal state */}
+              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-all duration-300 transform hover:scale-110 hover:-translate-y-0.5 hover:drop-shadow-[0_0_16px_rgba(143,211,199,0.35)]">
                 <Image
                   src={item.logo}
                   alt={item.name}
                   fill
-                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
+                  className="object-contain pointer-events-none drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
                 />
               </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] transition-colors hidden sm:inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] hidden sm:inline-block">
                 {item.name}
               </span>
             </div>

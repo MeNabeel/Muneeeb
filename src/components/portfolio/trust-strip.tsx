@@ -23,14 +23,14 @@ export function TrustStrip() {
             {trustOrganizations.map((org, index) => (
               <motion.div
                 key={org.name}
-                className="p-5 bg-[#111917] shadow-lg hover:shadow-2xl hover:bg-[#15201d] border-none transition-all duration-300 group flex flex-col justify-between rounded-none"
+                className="p-5 bg-[#111917] shadow-lg hover:shadow-[0_10px_30px_rgba(143,211,199,0.15)] hover:bg-[#15201d] border border-transparent hover:border-[#8FD3C7]/40 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 flex flex-col justify-between rounded-none cursor-pointer"
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Logo Image: Always preserves original colors, zero grayscale/invert filters */}
-                <div className="relative h-12 w-28 mb-3 transition-transform duration-300 group-hover:scale-105">
+                <div className="relative h-12 w-28 mb-3 transition-transform duration-300">
                   <Image
                     src={org.logo}
                     alt={org.name}
@@ -39,7 +39,7 @@ export function TrustStrip() {
                   />
                 </div>
                 <div>
-                  {/* Scoped Title Text: Always stays crisp white #F7F4ED without hover color shift */}
+                  {/* Scoped Title Text: Crisp white #F7F4ED */}
                   <p className="text-sm font-black uppercase tracking-wider text-[#F7F4ED] transition-none">
                     {org.name}
                   </p>
