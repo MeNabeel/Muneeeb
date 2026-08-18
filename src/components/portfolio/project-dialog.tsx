@@ -24,6 +24,7 @@ export function ProjectDialog() {
   if (!project) return null;
 
   const embedUrl = getYouTubeEmbedUrl(project.youtubeUrl);
+  const isFacebook = project.platform === "Facebook" || project.youtubeUrl?.includes("facebook.com");
 
   const handleClose = () => {
     dispatch(closeProjectDialog());
@@ -66,13 +67,27 @@ export function ProjectDialog() {
               />
             </div>
           ) : (
-            <div className="relative w-full aspect-video bg-[#0B0F0E] overflow-hidden">
-              {/* eslint-disable-next-javascript-ignore */}
+            <div className="relative w-full aspect-video bg-[#0B0F0E] overflow-hidden group">
               <img
                 src={project.thumbnail}
                 alt={project.title}
                 className="w-full h-full object-cover"
               />
+              {project.youtubeUrl && (
+                <a
+                  href={project.youtubeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute inset-0 bg-[#0B0F0E]/50 flex flex-col items-center justify-center space-y-3 group-hover:bg-[#0B0F0E]/30 transition-all"
+                >
+                  <div className="w-14 h-14 rounded-full bg-[#8FD3C7] text-[#0B0F0E] flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+                    <Play className="h-7 w-7 fill-current ml-0.5" />
+                  </div>
+                  <span className="text-xs font-bold uppercase tracking-widest text-[#F7F4ED] bg-[#0B0F0E]/90 px-3 py-1 border border-[#8FD3C7]/30">
+                    {isFacebook ? "Watch on Facebook" : "Watch Video"}
+                  </span>
+                </a>
+              )}
             </div>
           )}
         </div>
@@ -96,7 +111,7 @@ export function ProjectDialog() {
           <div className="space-y-6 pt-4">
             <Separator className="bg-[rgba(143,211,199,0.1)]" />
             <h4 className="text-xs uppercase tracking-widest text-[#8FD3C7] font-bold">
-              Case Study & Strategy Breakdown
+              Case Study &amp; Strategy Breakdown
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -165,7 +180,7 @@ export function ProjectDialog() {
                 rel="noopener noreferrer"
               >
                 <Play className="mr-2 h-4 w-4 fill-current" />
-                Open on YouTube
+                {isFacebook ? "Open on Facebook" : "Open on YouTube"}
                 <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </Button>

@@ -37,7 +37,7 @@ export interface SkillCategory {
 export interface SocialLink {
   name: string;
   url: string;
-  platformKey: "youtube" | "instagram" | "facebook" | "tiktok" | "x" | "whatsapp";
+  platformKey: "youtube" | "instagram" | "facebook" | "x" | "whatsapp";
   ariaLabel: string;
 }
 
@@ -81,7 +81,7 @@ export const personalDetails = {
     ],
     bio: [
       "I am Muneeb, a social and digital media specialist based in Lahore. My path in tech and media started with completing my ICS Physics at Punjab Group of Colleges (2019–2021). Passionate about digital strategy, I pursued specialized certification in Social Media Marketing & Management at Dankash Institute.",
-      "I began my professional career as a Social Media Intern at Dankash Institute for 6 months, building hands-on fundamentals. I then joined Nai Baat Media Network / Lahore Rang as a Social Media Content Executive for 2 years, managing high-volume news publishing and audience growth. Following a 2-month tenure at Aik News, I returned to Nai Baat Media Network / Lahore Rang, where I continue managing digital content today.",
+      "I began my professional career as a Social Media Intern at Dankash Institute for 6 months, building hands-on fundamentals. I then joined Nai Baat Media Network / Lahore Rang as a Social Media Content Executive for 2 years, managing high-volume news publishing and audience growth. Following a 2-month tenure at Aik News, I returned to Nai Baat Media Network / Lahore Rang for approximately 1 year, where I continue managing digital content today.",
       "Over the years, I've transformed my training into practical expertise across Social Media Management, Content Strategy, Video Production, Audience Engagement, and Performance Analysis.",
     ],
   },
@@ -96,43 +96,35 @@ export const personalDetails = {
 };
 
 export const trustOrganizations: ChannelLogo[] = [
-  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Content Executive" },
   { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Content Executive" },
-  { name: "Dunya News", logo: "/images/dunya-removebg-preview.png", role: "YouTube Executive" },
+  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Content Executive" },
   { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "Social Media Executive" },
 ];
 
 export const channelLogos: ChannelLogo[] = [
-  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Broadcast Network" },
   { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Digital Media" },
-  { name: "Dunya News", logo: "/images/dunya-removebg-preview.png", role: "News Network" },
+  { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Broadcast Network" },
   { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "News Channel" },
 ];
 
 export const socialLinks: SocialLink[] = [
   {
-    name: "YouTube",
-    url: "https://www.youtube.com",
-    platformKey: "youtube",
-    ariaLabel: "Visit Muneeb's YouTube Channel",
-  },
-  {
-    name: "Instagram",
-    url: "https://www.instagram.com",
-    platformKey: "instagram",
-    ariaLabel: "Follow Muneeb on Instagram",
-  },
-  {
     name: "Facebook",
-    url: "https://www.facebook.com",
+    url: "https://www.facebook.com/share/19DWXCbi31/",
     platformKey: "facebook",
     ariaLabel: "Connect with Muneeb on Facebook",
   },
   {
-    name: "TikTok",
-    url: "https://www.tiktok.com",
-    platformKey: "tiktok",
-    ariaLabel: "Watch Muneeb on TikTok",
+    name: "Instagram",
+    url: "https://www.instagram.com/muneeb_butt111?igsh=MXVwNW1kMTk1N2xzeQ==",
+    platformKey: "instagram",
+    ariaLabel: "Follow Muneeb on Instagram",
+  },
+  {
+    name: "YouTube",
+    url: "https://www.youtube.com",
+    platformKey: "youtube",
+    ariaLabel: "Visit Muneeb's YouTube Channel",
   },
   {
     name: "X (Twitter)",
@@ -150,133 +142,136 @@ export const socialLinks: SocialLink[] = [
 
 export const featuredWork: Project[] = [
   {
-    id: "project-01",
-    title: "Special Facebook Report: Rishta Market & Social Trends",
+    id: "project-qurbani",
+    title: "Qurbani Video",
     category: "Social Media",
     description:
-      "High-engagement Facebook video packaging, custom thumbnail design, and strategic caption hooks targeting viral reach.",
-    thumbnail: "/images/rishta.jpg",
-    date: "2025",
-    platform: "Facebook",
-    tags: ["Facebook Video", "Viral Content", "Social Media", "Editing"],
-    caseStudy: {
-      challenge: "Maximize Facebook video reach and organic share rates for social feature stories.",
-      approach: "Designed high-contrast Urdu typography thumbnails and fast-paced hook editing.",
-      content: "Exclusive social feature video package with dynamic subtitle overlays.",
-      result: "Achieved viral engagement across Facebook feeds and community pages.",
-    },
-  },
-  {
-    id: "project-02",
-    title: "Qurbani Special Coverage & Event Packaging",
-    category: "Social Media",
-    description:
-      "Facebook Watch video packaging, title metadata optimization, and audience-targeted distribution during peak festive season.",
+      "Facebook Watch video packaging, title metadata optimization, and audience-targeted distribution during festive season.",
     thumbnail: "/images/qurbani.jpg",
-    date: "2024 — 2025",
+    youtubeUrl: "https://www.facebook.com/share/v/1MGUJoeqfY/",
+    date: "2024",
     platform: "Facebook",
-    tags: ["Facebook Watch", "Event Coverage", "Audience Growth", "Analytics"],
+    tags: ["Facebook Video", "Qurbani", "Event Coverage", "Editing"],
     caseStudy: {
-      challenge: "Deliver rapid festive season video coverage to Facebook audiences with maximum retention.",
-      approach: "Optimized 3-minute video formatting with clear call-to-action overlays.",
+      challenge: "Deliver festive season video coverage to Facebook audiences with maximum retention.",
+      approach: "Optimized video formatting with clear call-to-action overlays.",
       content: "On-ground festive reporting, market trends, and human interest stories.",
       result: "Generated sustained multi-million view impressions across network pages.",
     },
   },
   {
-    id: "project-03",
-    title: "Police Officers & Law Enforcement Special Report",
+    id: "project-rishta",
+    title: "Rishta",
+    category: "Social Media",
+    description:
+      "High-engagement Facebook video packaging, custom thumbnail design, and strategic caption hooks targeting viral reach.",
+    thumbnail: "/images/rishta.jpg",
+    youtubeUrl: "https://www.facebook.com/share/v/19SWAwFT9B/",
+    date: "2025",
+    platform: "Facebook",
+    tags: ["Facebook Video", "Rishta Market", "Viral Content", "Editing"],
+    caseStudy: {
+      challenge: "Maximize Facebook video reach and organic share rates for social feature stories.",
+      approach: "Designed high-contrast typography thumbnails and fast-paced hook editing.",
+      content: "Exclusive social feature video package with dynamic subtitle overlays.",
+      result: "Achieved viral engagement across Facebook feeds and community pages.",
+    },
+  },
+  {
+    id: "project-officers",
+    title: "Officers",
     category: "Social Media",
     description:
       "Editorial Facebook video packaging, investigative framing, and rapid social media publishing.",
     thumbnail: "/images/officers.jpg",
+    youtubeUrl: "https://www.facebook.com/share/v/18GmnGe93i/",
     date: "2024",
     platform: "Facebook",
-    tags: ["Facebook Report", "Investigative", "Social Media", "Video Editing"],
+    tags: ["Facebook Report", "Officers", "Investigative", "Video Editing"],
   },
   {
-    id: "project-04",
-    title: "ASI Police Duty & Public Safety Report",
+    id: "project-asi",
+    title: "ASI",
     category: "YouTube Content",
     description:
       "YouTube broadcast clipping, thumbnail design, search metadata indexing, and audience optimization.",
     thumbnail: "/images/ASI.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtu.be/IvstQ-1zje4?si=ucW114LbOLQg7SV3",
     date: "2024",
     platform: "YouTube",
-    tags: ["YouTube SEO", "Police Duty", "Broadcast", "Video Editing"],
+    tags: ["YouTube SEO", "ASI Report", "Police Duty", "Video Editing"],
   },
   {
-    id: "project-05",
-    title: "Mulazim & Labor Rights Special Feature",
-    category: "YouTube Content",
-    description:
-      "Human interest storytelling video package, multi-track video editing, audio leveling, and YouTube publishing.",
-    thumbnail: "/images/Mulazim.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2024",
-    platform: "YouTube",
-    tags: ["Human Interest", "YouTube Content", "Video Production", "Editing"],
-  },
-  {
-    id: "project-06",
-    title: "Pathan Community Culture & Local Stories",
-    category: "YouTube Content",
-    description:
-      "Cultural storytelling, vertical shorts packaging, high-contrast thumbnail graphics, and YouTube channel curation.",
-    thumbnail: "/images/Pathan.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2024",
-    platform: "YouTube",
-    tags: ["Culture", "YouTube Feature", "Video Editing", "Audience Reach"],
-  },
-  {
-    id: "project-07",
-    title: "Petrol Price Hike & Public Inflation Analysis",
-    category: "Video Editing",
-    description:
-      "Breaking news video packaging, graphic overlays, fast headline cuts, and cross-platform publishing.",
-    thumbnail: "/images/petrol.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2025",
-    platform: "YouTube / Facebook",
-    tags: ["Breaking News", "Petrol Hike", "Video Editing", "Headlines"],
-  },
-  {
-    id: "project-08",
-    title: "Traffic Warden & Public Safety Awareness",
-    category: "Video Editing",
-    description:
-      "Public safety video campaign, crisp motion cuts, color grading, and social media video distribution.",
-    thumbnail: "/images/Traffic.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    date: "2024",
-    platform: "YouTube / Social Media",
-    tags: ["Traffic Safety", "Awareness", "Editing", "Shorts"],
-  },
-  {
-    id: "project-09",
-    title: "Tines & Special Broadcast Highlights",
+    id: "project-tines",
+    title: "Tines",
     category: "Digital Strategy",
     description:
       "Comprehensive broadcast clipping, metadata tagging, playlist curation, and digital revenue optimization.",
     thumbnail: "/images/Tines.jpg",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    youtubeUrl: "https://youtu.be/ptPT9MKmV2M?si=G7i3LUWPfQcz6jQB",
     date: "2025",
-    platform: "YouTube Broadcast",
-    tags: ["Broadcast", "Digital Strategy", "YouTube SEO", "Monetization"],
+    platform: "YouTube",
+    tags: ["Tines", "Broadcast", "YouTube SEO", "Digital Strategy"],
+  },
+  {
+    id: "project-pathan",
+    title: "Pathan",
+    category: "YouTube Content",
+    description:
+      "Cultural storytelling, vertical shorts packaging, high-contrast thumbnail graphics, and YouTube channel curation.",
+    thumbnail: "/images/Pathan.jpg",
+    youtubeUrl: "https://youtu.be/RqUIliHHrTQ?si=UN54107e0LKf7L4Q",
+    date: "2024",
+    platform: "YouTube",
+    tags: ["Pathan", "Culture", "YouTube Feature", "Video Editing"],
+  },
+  {
+    id: "project-traffic",
+    title: "Traffic Warden",
+    category: "Video Editing",
+    description:
+      "Public safety video campaign, crisp motion cuts, color grading, and social media video distribution.",
+    thumbnail: "/images/Traffic.jpg",
+    youtubeUrl: "https://youtu.be/6cQB5WV7lUQ?si=WkcjLOPPMUifH7Xk",
+    date: "2024",
+    platform: "YouTube",
+    tags: ["Traffic Warden", "Public Safety", "Awareness", "Editing"],
+  },
+  {
+    id: "project-petrol",
+    title: "Petrol",
+    category: "Video Editing",
+    description:
+      "Breaking news video packaging, graphic overlays, fast headline cuts, and cross-platform publishing.",
+    thumbnail: "/images/petrol.jpg",
+    youtubeUrl: "https://youtu.be/NLguO10Mnm8?si=QTDD-YDmQw5vdjYI",
+    date: "2025",
+    platform: "YouTube",
+    tags: ["Petrol Hike", "Breaking News", "Video Editing", "Headlines"],
+  },
+  {
+    id: "project-mulazim",
+    title: "Mulazim",
+    category: "YouTube Content",
+    description:
+      "Human interest storytelling video package, multi-track video editing, audio leveling, and YouTube publishing.",
+    thumbnail: "/images/Mulazim.jpg",
+    youtubeUrl: "https://youtu.be/Bys3f1UvbNk?si=1z1e9BxSoPgKBIg4",
+    date: "2024",
+    platform: "YouTube",
+    tags: ["Mulazim", "Labor Rights", "YouTube Content", "Video Production"],
   },
 ];
 
 export const experienceTimeline: ExperienceItem[] = [
   {
     id: "exp-1",
-    period: "2024 — Present",
+    period: "Approx. 1 Year (Current)",
     company: "Nai Baat Media Network / Lahore Rang",
     role: "Social Media Content Executive",
     isCurrent: true,
     responsibilities: [
-      "Managing social media content publishing across YouTube, Facebook, Instagram, and TikTok",
+      "Managing social media content publishing across YouTube, Facebook, and Instagram",
       "Executing daily content strategy, video clipping, and thumbnail placement",
       "Monitoring audience reach, engagement analytics, and channel growth metrics",
       "Coordinating content scheduling, editorial planning, and team workflows",
@@ -284,7 +279,7 @@ export const experienceTimeline: ExperienceItem[] = [
   },
   {
     id: "exp-2",
-    period: "2024 (2 Months)",
+    period: "2 Months",
     company: "Aik News",
     role: "Social Media Executive",
     responsibilities: [
@@ -295,11 +290,11 @@ export const experienceTimeline: ExperienceItem[] = [
   },
   {
     id: "exp-3",
-    period: "2022 — 2024 (2 Years)",
+    period: "2 Years",
     company: "Nai Baat Media Network / Lahore Rang",
     role: "Social Media Content Executive",
     responsibilities: [
-      "Overseeing channel publishing across YouTube, Facebook, TikTok, and Instagram",
+      "Overseeing channel publishing across YouTube, Facebook, and Instagram",
       "Formulating short-form vertical video strategies and community engagement",
       "Driving organic audience growth and monitoring platform metrics",
     ],
@@ -323,7 +318,7 @@ export const skillsData: SkillCategory[] = [
     skills: [
       {
         name: "Social Media Management",
-        description: "End-to-end channel publishing across YouTube, Facebook, Instagram & TikTok",
+        description: "End-to-end channel publishing across YouTube, Facebook & Instagram",
         category: "management",
       },
       {
@@ -367,7 +362,7 @@ export const skillsData: SkillCategory[] = [
         category: "management",
       },
       {
-        name: "Meta Suite & TikTok",
+        name: "Meta Suite",
         description: "Reels strategy, Page publishing & trending content hooks",
         category: "management",
       },

@@ -28,15 +28,16 @@ export function ChannelMarquee() {
               key={`logo1-${item.name}-${idx}`}
               className="flex items-center space-x-4 px-6 shrink-0 group cursor-pointer"
             >
-              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
+              {/* Original logo colors preserved at all times without grayscale filters */}
+              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-transform duration-300 transform group-hover:scale-105">
                 <Image
                   src={item.logo}
                   alt={item.name}
                   fill
-                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
+                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)] pointer-events-none"
                 />
               </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#A9B2AE] group-hover:text-[#8FD3C7] transition-colors hidden sm:inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] transition-none hidden sm:inline-block">
                 {item.name}
               </span>
             </div>
@@ -52,15 +53,16 @@ export function ChannelMarquee() {
               key={`logo2-${item.name}-${idx}`}
               className="flex items-center space-x-4 px-6 shrink-0 group cursor-pointer"
             >
-              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all duration-300 transform group-hover:scale-110">
+              {/* Original logo colors preserved at all times without grayscale filters */}
+              <div className="relative h-12 w-28 sm:h-14 sm:w-36 flex items-center justify-center transition-transform duration-300 transform group-hover:scale-105">
                 <Image
                   src={item.logo}
                   alt={item.name}
                   fill
-                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)]"
+                  className="object-contain drop-shadow-[0_0_12px_rgba(143,211,199,0.2)] pointer-events-none"
                 />
               </div>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#A9B2AE] group-hover:text-[#8FD3C7] transition-colors hidden sm:inline-block">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#F7F4ED] transition-none hidden sm:inline-block">
                 {item.name}
               </span>
             </div>

@@ -5,7 +5,6 @@ import {
   FaYoutube,
   FaInstagram,
   FaFacebookF,
-  FaTiktok,
   FaWhatsapp,
   FaXTwitter,
 } from "react-icons/fa6";
@@ -13,14 +12,12 @@ import { socialLinks, SocialLink } from "@/data/portfolio";
 
 interface SocialIconsProps {
   className?: string;
-  iconSize?: string; // e.g. "text-lg" or "text-xl"
-  showLabels?: boolean;
+  iconSize?: string;
 }
 
 export function SocialIcons({
   className = "",
-  iconSize = "text-lg",
-  showLabels = false,
+  iconSize = "text-base",
 }: SocialIconsProps) {
   const getIcon = (platformKey: SocialLink["platformKey"]) => {
     switch (platformKey) {
@@ -30,35 +27,27 @@ export function SocialIcons({
         return <FaInstagram className={iconSize} />;
       case "facebook":
         return <FaFacebookF className={iconSize} />;
-      case "tiktok":
-        return <FaTiktok className={iconSize} />;
       case "x":
         return <FaXTwitter className={iconSize} />;
       case "whatsapp":
         return <FaWhatsapp className={iconSize} />;
       default:
-        return <FaXTwitter className={iconSize} />;
+        return null;
     }
   };
 
   return (
-    <div className={`flex items-center space-x-5 ${className}`}>
-      {socialLinks.map((platform) => (
+    <div className={`flex items-center space-x-3 sm:space-x-4 ${className}`}>
+      {socialLinks.map((social) => (
         <a
-          key={platform.name}
-          href={platform.url}
+          key={social.name}
+          href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={platform.ariaLabel}
-          title={platform.name}
-          className="w-7 h-7 flex items-center justify-center text-center text-[#A9B2AE] hover:text-[#8FD3C7] transition-all duration-300 transform hover:scale-125 hover:-translate-y-1 border-none outline-none focus-visible:text-[#8FD3C7] shrink-0"
+          aria-label={social.ariaLabel}
+          className="w-8 h-8 sm:w-7 sm:h-7 flex items-center justify-center text-[#A9B2AE] hover:text-[#8FD3C7] transition-all duration-300 transform hover:scale-110 border-none bg-transparent"
         >
-          {getIcon(platform.platformKey)}
-          {showLabels && (
-            <span className="text-xs uppercase tracking-wider font-semibold ml-2">
-              {platform.name}
-            </span>
-          )}
+          {getIcon(social.platformKey)}
         </a>
       ))}
     </div>
