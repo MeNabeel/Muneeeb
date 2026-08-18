@@ -7,6 +7,7 @@ export interface Project {
   youtubeUrl?: string;
   date?: string;
   platform?: string;
+  views?: string;
   tags?: string[];
   caseStudy?: {
     challenge?: string;
@@ -96,13 +97,13 @@ export const personalDetails = {
 };
 
 export const trustOrganizations: ChannelLogo[] = [
-  { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Content Executive" },
+  { name: "Lahore Rang", logo: "/images/lahorerang.png", role: "Content Executive" },
   { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Content Executive" },
   { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "Social Media Executive" },
 ];
 
 export const channelLogos: ChannelLogo[] = [
-  { name: "Lahore Rang", logo: "/images/lahorerang-removebg-preview.png", role: "Digital Media" },
+  { name: "Lahore Rang", logo: "/images/lahorerang.png", role: "Digital Media" },
   { name: "Neo News", logo: "/images/NEO-removebg-preview.png", role: "Broadcast Network" },
   { name: "Aik News", logo: "/images/aik-removebg-preview.png", role: "News Channel" },
 ];
@@ -142,8 +143,34 @@ export const socialLinks: SocialLink[] = [
 
 export const featuredWork: Project[] = [
   {
+    id: "project-asi",
+    title: "Badge of Dishonor: Punjab Police Smuggling Confrontation",
+    category: "YouTube Content",
+    description:
+      "YouTube broadcast clipping, thumbnail design, search metadata indexing, and audience optimization.",
+    thumbnail: "/images/ASI.jpg",
+    youtubeUrl: "https://youtu.be/IvstQ-1zje4?si=ucW114LbOLQg7SV3",
+    date: "2024",
+    platform: "YouTube",
+    views: "1M views",
+    tags: ["YouTube SEO", "ASI Report", "Police Duty", "Video Editing"],
+  },
+  {
+    id: "project-tines",
+    title: "Lahore Ki Sab Sey Bari Froud Company Tines Ka Scam Bay Naqaab",
+    category: "Digital Strategy",
+    description:
+      "Comprehensive broadcast clipping, metadata tagging, playlist curation, and digital revenue optimization.",
+    thumbnail: "/images/Tines.jpg",
+    youtubeUrl: "https://youtu.be/ptPT9MKmV2M?si=G7i3LUWPfQcz6jQB",
+    date: "2025",
+    platform: "YouTube",
+    views: "1.5M views",
+    tags: ["Tines", "Scam Report", "YouTube SEO", "Digital Strategy"],
+  },
+  {
     id: "project-qurbani",
-    title: "Qurbani Video",
+    title: "Qurbani animal horns are being cut off to make amulets/talismans.",
     category: "Social Media",
     description:
       "Facebook Watch video packaging, title metadata optimization, and audience-targeted distribution during festive season.",
@@ -151,6 +178,7 @@ export const featuredWork: Project[] = [
     youtubeUrl: "https://www.facebook.com/share/v/1MGUJoeqfY/",
     date: "2024",
     platform: "Facebook",
+    views: "5M views",
     tags: ["Facebook Video", "Qurbani", "Event Coverage", "Editing"],
     caseStudy: {
       challenge: "Deliver festive season video coverage to Facebook audiences with maximum retention.",
@@ -160,8 +188,34 @@ export const featuredWork: Project[] = [
     },
   },
   {
+    id: "project-pathan",
+    title: "Tharki Pathan 2 Shadiyo Key Badh Be Baaz Na Aya",
+    category: "YouTube Content",
+    description:
+      "Cultural storytelling, vertical shorts packaging, high-contrast thumbnail graphics, and YouTube channel curation.",
+    thumbnail: "/images/Pathan.jpg",
+    youtubeUrl: "https://youtu.be/RqUIliHHrTQ?si=UN54107e0LKf7L4Q",
+    date: "2024",
+    platform: "YouTube",
+    views: "2M views",
+    tags: ["Pathan", "Culture", "YouTube Feature", "Video Editing"],
+  },
+  {
+    id: "project-officers",
+    title: "Petrol is getting more expensive, but the extravagance of government officers hasn't ended.",
+    category: "Social Media",
+    description:
+      "Editorial Facebook video packaging, investigative framing, and rapid social media publishing.",
+    thumbnail: "/images/officers.jpg",
+    youtubeUrl: "https://www.facebook.com/share/v/18GmnGe93i/",
+    date: "2024",
+    platform: "Facebook",
+    views: "4M views",
+    tags: ["Facebook Report", "Officers", "Investigative", "Video Editing"],
+  },
+  {
     id: "project-rishta",
-    title: "Rishta",
+    title: "A crazy boy called home about a marriage proposal / rishta.",
     category: "Social Media",
     description:
       "High-engagement Facebook video packaging, custom thumbnail design, and strategic caption hooks targeting viral reach.",
@@ -169,6 +223,7 @@ export const featuredWork: Project[] = [
     youtubeUrl: "https://www.facebook.com/share/v/19SWAwFT9B/",
     date: "2025",
     platform: "Facebook",
+    views: "4M views",
     tags: ["Facebook Video", "Rishta Market", "Viral Content", "Editing"],
     caseStudy: {
       challenge: "Maximize Facebook video reach and organic share rates for social feature stories.",
@@ -178,80 +233,8 @@ export const featuredWork: Project[] = [
     },
   },
   {
-    id: "project-officers",
-    title: "Officers",
-    category: "Social Media",
-    description:
-      "Editorial Facebook video packaging, investigative framing, and rapid social media publishing.",
-    thumbnail: "/images/officers.jpg",
-    youtubeUrl: "https://www.facebook.com/share/v/18GmnGe93i/",
-    date: "2024",
-    platform: "Facebook",
-    tags: ["Facebook Report", "Officers", "Investigative", "Video Editing"],
-  },
-  {
-    id: "project-asi",
-    title: "ASI",
-    category: "YouTube Content",
-    description:
-      "YouTube broadcast clipping, thumbnail design, search metadata indexing, and audience optimization.",
-    thumbnail: "/images/ASI.jpg",
-    youtubeUrl: "https://youtu.be/IvstQ-1zje4?si=ucW114LbOLQg7SV3",
-    date: "2024",
-    platform: "YouTube",
-    tags: ["YouTube SEO", "ASI Report", "Police Duty", "Video Editing"],
-  },
-  {
-    id: "project-tines",
-    title: "Tines",
-    category: "Digital Strategy",
-    description:
-      "Comprehensive broadcast clipping, metadata tagging, playlist curation, and digital revenue optimization.",
-    thumbnail: "/images/Tines.jpg",
-    youtubeUrl: "https://youtu.be/ptPT9MKmV2M?si=G7i3LUWPfQcz6jQB",
-    date: "2025",
-    platform: "YouTube",
-    tags: ["Tines", "Broadcast", "YouTube SEO", "Digital Strategy"],
-  },
-  {
-    id: "project-pathan",
-    title: "Pathan",
-    category: "YouTube Content",
-    description:
-      "Cultural storytelling, vertical shorts packaging, high-contrast thumbnail graphics, and YouTube channel curation.",
-    thumbnail: "/images/Pathan.jpg",
-    youtubeUrl: "https://youtu.be/RqUIliHHrTQ?si=UN54107e0LKf7L4Q",
-    date: "2024",
-    platform: "YouTube",
-    tags: ["Pathan", "Culture", "YouTube Feature", "Video Editing"],
-  },
-  {
-    id: "project-traffic",
-    title: "Traffic Warden",
-    category: "Video Editing",
-    description:
-      "Public safety video campaign, crisp motion cuts, color grading, and social media video distribution.",
-    thumbnail: "/images/Traffic.jpg",
-    youtubeUrl: "https://youtu.be/6cQB5WV7lUQ?si=WkcjLOPPMUifH7Xk",
-    date: "2024",
-    platform: "YouTube",
-    tags: ["Traffic Warden", "Public Safety", "Awareness", "Editing"],
-  },
-  {
-    id: "project-petrol",
-    title: "Petrol",
-    category: "Video Editing",
-    description:
-      "Breaking news video packaging, graphic overlays, fast headline cuts, and cross-platform publishing.",
-    thumbnail: "/images/petrol.jpg",
-    youtubeUrl: "https://youtu.be/NLguO10Mnm8?si=QTDD-YDmQw5vdjYI",
-    date: "2025",
-    platform: "YouTube",
-    tags: ["Petrol Hike", "Breaking News", "Video Editing", "Headlines"],
-  },
-  {
     id: "project-mulazim",
-    title: "Mulazim",
+    title: "Beat him repeatedly and broke the employee's arms",
     category: "YouTube Content",
     description:
       "Human interest storytelling video package, multi-track video editing, audio leveling, and YouTube publishing.",
@@ -259,7 +242,34 @@ export const featuredWork: Project[] = [
     youtubeUrl: "https://youtu.be/Bys3f1UvbNk?si=1z1e9BxSoPgKBIg4",
     date: "2024",
     platform: "YouTube",
+    views: "900k+ views",
     tags: ["Mulazim", "Labor Rights", "YouTube Content", "Video Production"],
+  },
+  {
+    id: "project-petrol",
+    title: "Petrol mafia stealing petrol",
+    category: "Video Editing",
+    description:
+      "Breaking news video packaging, graphic overlays, fast headline cuts, and cross-platform publishing.",
+    thumbnail: "/images/petrol.jpg",
+    youtubeUrl: "https://youtu.be/NLguO10Mnm8?si=QTDD-YDmQw5vdjYI",
+    date: "2025",
+    platform: "YouTube",
+    views: "1.7M views",
+    tags: ["Petrol Hike", "Breaking News", "Video Editing", "Headlines"],
+  },
+  {
+    id: "project-traffic",
+    title: "The police officer who broke the signal and fled ran right into the anchor's hands",
+    category: "Video Editing",
+    description:
+      "Public safety video campaign, crisp motion cuts, color grading, and social media video distribution.",
+    thumbnail: "/images/Traffic.jpg",
+    youtubeUrl: "https://youtu.be/6cQB5WV7lUQ?si=WkcjLOPPMUifH7Xk",
+    date: "2024",
+    platform: "YouTube",
+    views: "2.5M views",
+    tags: ["Traffic Warden", "Public Safety", "Awareness", "Editing"],
   },
 ];
 

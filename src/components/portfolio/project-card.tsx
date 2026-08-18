@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { Play, ArrowUpRight, Film, Clock } from "lucide-react";
+import { Play, ArrowUpRight, Film, Clock, Eye } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Project } from "@/data/portfolio";
@@ -44,7 +44,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             alt={project.title}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover object-center grayscale-[15%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+            className="object-cover object-center grayscale-[10%] group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
           />
 
           {/* Film Frame Crop Brackets */}
@@ -56,15 +56,24 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
           {/* Laser Scan Line on Hover */}
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#8FD3C7]/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-scanline pointer-events-none" />
 
-          {/* Duration & Category Badges */}
+          {/* Badges: Category (Top-Left) & Views / Duration (Top-Right) */}
           <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 right-2.5 sm:right-3 flex items-center justify-between z-20">
             <Badge variant="mint" className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider border-none px-2 py-0.5">
               {project.category}
             </Badge>
 
-            <div className="flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/80 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.2)]">
-              <Clock className="h-3 w-3" />
-              <span>{getTimecode(project.id)}</span>
+            <div className="flex items-center space-x-2">
+              {project.views && (
+                <div className="flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/90 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#E9DDC8] border border-[rgba(233,221,200,0.3)] shadow-lg font-bold">
+                  <Eye className="h-3 w-3 text-[#8FD3C7]" />
+                  <span>{project.views}</span>
+                </div>
+              )}
+
+              <div className="hidden sm:flex items-center space-x-1 px-1.5 sm:px-2 py-0.5 bg-[#0B0F0E]/80 backdrop-blur-md text-[9px] sm:text-[10px] font-mono text-[#8FD3C7] border border-[rgba(143,211,199,0.2)]">
+                <Clock className="h-3 w-3" />
+                <span>{getTimecode(project.id)}</span>
+              </div>
             </div>
           </div>
 
@@ -96,7 +105,7 @@ export function ProjectCard({ project, onSelect }: ProjectCardProps) {
             {project.date && <span>{project.date}</span>}
           </div>
 
-          <h3 className="text-lg sm:text-xl font-bold uppercase text-[#F7F4ED] group-hover:text-[#8FD3C7] transition-colors line-clamp-2 leading-snug">
+          <h3 className="text-sm sm:text-base md:text-lg font-bold uppercase text-[#F7F4ED] group-hover:text-[#8FD3C7] transition-colors line-clamp-2 leading-snug">
             {project.title}
           </h3>
 

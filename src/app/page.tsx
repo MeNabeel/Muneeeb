@@ -10,6 +10,7 @@ import { Skills } from "@/components/portfolio/skills";
 import { Contact } from "@/components/portfolio/contact";
 import { Footer } from "@/components/portfolio/footer";
 import { StudioLighting } from "@/components/portfolio/studio-lighting";
+import { LiveBroadcast } from "@/components/portfolio/live-broadcast";
 import { heroMarqueeWords } from "@/data/portfolio";
 
 export default function Home() {
@@ -20,6 +21,9 @@ export default function Home() {
 
       {/* Floating Desktop Social Bar */}
       <SocialBar />
+
+      {/* Floating YouTube Live Telecast Component */}
+      <LiveBroadcast />
 
       {/* Navigation Header */}
       <Navbar />
